@@ -233,9 +233,9 @@ Opérations:<br/>
 Un booléen non initialisé a une valeur inconnue
 
 ```cpp
-boolean toBe : boolean <- faux; // toBe est faux
-boolean notToBe : boolean <- NOT toBe; // notToBe est vrai
-boolean question : boolean <- toBe OU notToBe; // question est vrai
+declarer toBe : boolean <- faux; // toBe est faux
+declarer notToBe : boolean <- NOT toBe; // notToBe est vrai
+declarer question : boolean <- toBe OU notToBe; // question est vrai
 ```
 
 Éviter

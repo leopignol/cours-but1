@@ -178,7 +178,7 @@ La mémoire n'est pas une capacité innée, la pensée humaine pas que mentale: 
 
 Évolution?
   - Un outil sert à renforcer les choses qu'on fait sans y penser
-  - Auto-préservation instrumentale: contrôle <em>a posteriori</em>
+  - Auto-préservation instrumentale: contrôle *a posteriori*
   - Techniques interdites ou abandonnées pour des raisons éthiques, sanitaires, environnementales ou autres:
     - Amiante, bisphénol A dans les plastiques alimentaires, mines antipersonnel, plomb en peinture, bombes nucléaires pour les travaux, manipulation génétique d'embryons humains, etc.
 
@@ -186,6 +186,151 @@ Involution?
   - Ne pas utiliser l'IA comme une prothèse mais comme une orthèse cognitive
 
 Littératie: capacité de repérer, classer, comprendre, générer et évaluer de l'information, à partir de l'IA de d'internet
+
+## CM1-3 Introduction
+`2026-09-08`
+
+```
+Système d'information
+Système informatique
+Ordinateurs
+
+        [      Couche 8: Métier      ]
+       [ Couche 7: Design fonctionnel ]
+      [ Couche 6: Architecture système ]
+     [        Couche 5: Ergonomie       ]
+    [  Couche 4: Architecture logicielle ]
+   [        Couche 3: Algorithmique       ]
+  [            Couche 2: Système           ]
+ [         Couche 1: Microprogramme         ]
+[             Couche 0: Matériel             ]
+
+```
+
+Architecture:
+- Couches Hautes
+  - Couche des applications
+  - Couche distribution
+- Couche système/réseau
+  - Service additionnels
+  - Noyau
+- Couches basses
+  - Couche du microcode et du langage machine
+  - Couche du matériel
+
+Programme : séquence d’instructions exécutable par un ordinateur
+Processus : programme en cours d'exécution (« chargé » en mémoire vive)
+Logiciel : un ou plusieurs programmes avec données et documentation
+Système d’exploitation : ensemble de programmes et de logiciels (systèmes)
+contrôlant le matériel informatique et orchestrant les applications
+Application (logiciel applicatif) : logiciel non-système
+Système de fichiers : mécanisme de stockage / d’accession des données sur "disque" (disque dur, clef USB, DVD-ROM, etc.)
+
+Ressoures informatiques:
+- Composant de système interne:
+- Matérielle
+  - Processeur
+  - Mémoire vive/virtuelle
+  - Disques durs
+  - Périphérique externe
+  - Bande passante réseau
+- Logicielle
+
+### Shell
+- `bash` (bourne again `shell`): `shell` original (`sh`) avec des idées de `ksh` et `csh`
+- `tcsh` (C `shell`): syntaxe inspirée du C (initialement `csh`)
+- `ksh` (Korn `shell`): développé par David Korn
+- `zsh` (Z `shell`): reprend le meilleur de `bash`, `ksh` et `tcsh`
+- `fish` (friendly interactive `shell`): utilisation interactive
+- `yash` (yet another `shell`): `POSIX` + utilisation interactive
+
+CMD online: https://cocalc.com/<br/>
+CMD windows: https://mobaxterm.mobatek.net/download-home-edition.html
+Coder ensemble en ligne: https://codeshare.io/
+
+### Environnement hostile
+Architecture ou OS non choisi<br/>
+Editeurs de code source imposé
+
+### Commandes
+Code|Description|Exemple
+:--|:---------:|:-----
+`echo`|Afficher une lighe de texte|`echo Salut ça va ?`
+`ls`|Lister les fichiers d'un répertoire|`ls`, `ls -l`, `ls -a`, `ls-al`
+`cd`|Chager de répertoir courant|`cd dir`, `cd`, `cd ~`, `cd ..`
+`xterm`|Lancer un terminal|`xterm`
+`clear`|Effacer l'écran d'un terminal|`clear`
+`wc`|Compter les caractères / mots / lignes|`wc -l file`
+`sort`|Trier des fichiers|`sort -n nb` (tri numérique)
+`<, >, >>, 2>, 2>>, &>, &>>`|Redirections d'entrées, de sorties, de sorties d'erreur et des deux sorties|`ls > file`, `sort < file1 >> file2`
+`|`|Canal de communication unidirectionnel entre processus|`ls -l | grep key | less`
+`;`|Lancement séquentiel de commandes|`echo "Hello";echo "world"`
+`alias`|Lister les alias ou en créer|`alias la='ls-A'`
+---|Gestion des activités|---
+`ps`|Afficher l'état des processus|`ps`, `ps -e`, `ps -Af`, `ps auxfw`
+`bg`|Placer un processus en arrière-plan|`bg %1`
+`fg`|Placer un processus d'arrière-plan en premier plan|`fg %1`
+`jobs`|Afficher le processus en arrière-plan|`jobs`
+`&`|Lancer un programme en arrière-plan|`xterm &`
+`kill`|Envoyer un signal à un processus|`kill -9 666`
+`top`|Afficher les processus en continu|`top`
+---|Données persistantes|---
+`pwd`|Afficher le répertoire courant|`pwd`
+`touch`|Créer un fichier vide ou modifier les dates d'un fichier|`touch file`
+`cp`|Copier des fichiers|`cp file dir`
+`mv`|Déplacer ou renommer des fichiers|`mv file1 file2`, `rm -i file`
+`rm`|Supprimer un fichier|`rm file`, `rm -i file`
+`mkdir`|Créer un répertoire|`mkdir dir`
+`rmdir`|Supprimer un répertoire|`rmdir rep`
+`cat`|Afficher et concaténer des fichiers|`cat file`, `cat file1 file2`
+`head`|Afficher le début d'un fichier|`head -n 20 file` (20 lignes)
+`tail`|Afficher la fin d'un fichier|`tail -n 20 file` (20 lignes)
+`diff`|Comparer des fichiers/dossiers|`diff file1 file2`, `diff dir1 dir2`
+`grep`|Rechercher dans des fichiers|`grep Salut file`
+`find`|Rechercher selon des multiples|`find /usr/src -name ".c"`
+`sed`|Editer du texte non interactivement|`sed 's/Mr/M./g' file.txt` (remplacement global)
+`cut`|Afficher des colonnes ou champs|`cut -c 1-3 file` (3 caractères)
+`.`|Répertoire courant|`find . -ls`
+`..`|Répertoire parent|`cd ..`
+`~`|Répertoire personnel|`cd ~`
+---|Globin patterns|---
+`'`, `"`, `\`|Echappement des caractères spéciaux|`ls 'a*'`, `ls "x-y"`, `echo -e "x\ty"`
+`\``|Evaluation préalable de la commande|`chown \`id -u \` dir`
+
+Chemin absolu: Invariant, commence par `/` ou `~`<br/>
+Chemin relatif: Variable
+
+Globing patterns (filtres)
+- `?`: exactement un caractère quelconque
+- `*`: n'importe quel nombre de caractères (y compris 0)
+- `[ab...]`: un unique caractère au choix dans la Lister
+- `[!ab...]`: un unique caractère au choix absent de la liste
+
+### Données persistantes
+- `var`: fichiers variables
+  - `log`: journaux systèmes
+  - `ldp`: files d'impression
+  - `mail`: e-mails
+- `bin` (binaries): commandes "externes"
+- `sbin` (system binaries): commande d'admin
+- `dev` (devices): périphériques
+- `etc` (editable text configuration): fic. de conf.
+- `home`: répertoires personnels des utilisateurs
+- `root`: répertoire personnel de l'admin
+- `mnt` (mount): systèmes de fichiers montés
+- `usr` (unix system ressources): logiciels installés
+
+### Regex
+- Pas de standardisation
+- Symboles communs
+  - `.`: n'importe quel caractère
+  - `\\`: échapper (banaliser) un caractère
+  - `[]`: un des caractères au choix parmi ceux entre crochets
+  - `^`, `$`: début/fin (`^a`,`a$`)
+  - Quantifieurs:
+    - `?`: zéro ou une fois
+    - `*`: zéro, une ou plusieurs fois
+    - `+`: une ou plusieurs fois
 
 ---
 `mmartin.nevot@gmail.com`
