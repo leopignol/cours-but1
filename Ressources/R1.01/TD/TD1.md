@@ -123,11 +123,11 @@ declarer an : entier_naturel;
 afficher("entrez une annee:");
 saisir(an);
 
-si (an Mod 400 vaut 0):
+si (modulo(an, 400) vaut 0):
   afficher("annee bissextile");
-sinon si (an Mod 100 vaut 0):
+sinon si (modulo(an, 100) vaut 0):
   afficher("annee non bissextile");
-sinon si (an Mod 4 vaut 0):
+sinon si (modulo(an, 4) vaut 0):
   afficher("annee bissextile");
 sinon
   afficher("annee non bissextile")

@@ -3,6 +3,7 @@
 `2026-09-03`
 
 ## Initiation au développement
+
 algorithmique (al-khuwarismi)
 
 Séquence d'opérations visant à la résolution d'un problème en un temps dini (mentionner la condition d'arrêt)
@@ -10,6 +11,7 @@ Séquence d'opérations visant à la résolution d'un problème en un temps dini
 attention aux spécifications (apollo/soyouz, ariane 5)
 
 10 règles de la nasa:
+
 1. Avoid complex flow constructs, such a `goto` and `recursion`
 2. All loops must have fixed bounds. This prevents runaway code
 3. Avoid `heap memory allocation`
@@ -22,6 +24,7 @@ attention aux spécifications (apollo/soyouz, ariane 5)
 10. Compile with all possible warnings active; all warnings should then be addressed before release of the software
 
 ---
+
 D.
 
 - Action simple (instruction)
@@ -98,42 +101,45 @@ fchoix
 ```
 
 ### Expression logiques complexes
-* Opérateur `ET`:
-  * <>
-  * On n'exécute sequ1 que si les deux expressions logiques sont vraies en même temps
-* Opérateur `OU`
-  * <>
-  * Impossible à simplifier; On ne peut pas simplifier s'il y a 2 séquences différentes
-  * On exécute `sequ1` si `exprLog1` est vraie ou, à défaut, si `exprLog2` est vraie
-* Opérateur `ET_ALORS`:
-  * <>
-  * Plutôt sécurité
-  * `si (a) alors si (b)` n'est pas identique à utiliser `si (a ET b)`
-  * À utiliser plutôt que `ET`
-  * Si premier opérateur est faux alors 2e inutile (sortie faux)
-* Opérateur `OU_SINON`:
-  * <>
-  * Plutôt optimisation
-  * À utiliser plutôt que `OU`
-  * Si premier opérateur est vrai alors 2e inutile (sortie vrai)
-* Opérateur `NON`
-  * `si (NON (Expr_log_1 ET Expr_log_2))` == `si ((NON Expr_log_1) OU (NON Expr_log_2))`
-  * `si (NON (Expr_log_1 OU_SINON Expr_log_2))` == `si ((NON Expr_log_1) ET_ALORS (NON Expr_log_2))`
 
-`ET` / `ET_ALORS` | `Expr_log_1` (`V`) | `Expr_log_1` (`F`)
-:-|:-:|:-:
-`Expr_log_2` (`V`) | `V` | `F`
-`Expr_log_2` (`F`) | `F` | `F`
+- Opérateur `ET`:
+  - <>
+  - On n'exécute sequ1 que si les deux expressions logiques sont vraies en même temps
+- Opérateur `OU`
+  - <>
+  - Impossible à simplifier; On ne peut pas simplifier s'il y a 2 séquences différentes
+  - On exécute `sequ1` si `exprLog1` est vraie ou, à défaut, si `exprLog2` est vraie
+- Opérateur `ET_ALORS`:
+  - <>
+  - Plutôt sécurité
+  - `si (a) alors si (b)` n'est pas identique à utiliser `si (a ET b)`
+  - À utiliser plutôt que `ET`
+  - Si premier opérateur est faux alors 2e inutile (sortie faux)
+- Opérateur `OU_SINON`:
+  - <>
+  - Plutôt optimisation
+  - À utiliser plutôt que `OU`
+  - Si premier opérateur est vrai alors 2e inutile (sortie vrai)
+- Opérateur `NON`
+  - `si (NON (Expr_log_1 ET Expr_log_2))` == `si ((NON Expr_log_1) OU (NON Expr_log_2))`
+  - `si (NON (Expr_log_1 OU_SINON Expr_log_2))` == `si ((NON Expr_log_1) ET_ALORS (NON Expr_log_2))`
 
-`OU` / `OU_SINON` | `Expr_log_1` (`V`) | `Expr_log_1` (`F`)
-:-|:-:|:-:
-`Expr_log_2` (`V`) | `V` | `V`
-`Expr_log_2` (`F`) | `V` | `F`
+| `ET` / `ET_ALORS`  | `Expr_log_1` (`V`) | `Expr_log_1` (`F`) |
+| :----------------- | :----------------: | :----------------: |
+| `Expr_log_2` (`V`) |        `V`         |        `F`         |
+| `Expr_log_2` (`F`) |        `F`         |        `F`         |
+
+| `OU` / `OU_SINON`  | `Expr_log_1` (`V`) | `Expr_log_1` (`F`) |
+| :----------------- | :----------------: | :----------------: |
+| `Expr_log_2` (`V`) |        `V`         |        `V`         |
+| `Expr_log_2` (`F`) |        `V`         |        `F`         |
 
 ### Variables
+
 Une case = une variable d'un type fixe
 
 modèle:
+
 ```cpp
 declarer nomDeVariable : Type;
 
@@ -141,6 +147,7 @@ declarer jeu : jeuDeSociete; // <- assigne une variable et un type à une case
 ```
 
 Pour affecter / réaffecter une valeur:
+
 ```cpp
 nomDeVariable <- valeur;
 
@@ -148,6 +155,7 @@ jeu <- ColonDeCatane;
 ```
 
 Constantes:
+
 ```cpp
 declarer KnomVariable : constante Type <- valeur;
 
@@ -157,6 +165,7 @@ Kjeu <- SkyJoe; // Invalide
 ```
 
 Attention à la sémantique:
+
 ```cpp
 declarer superPlombier : delivreurDePrincesse;
 superPlombier <- Mario; // Juste
@@ -165,15 +174,17 @@ superPlombier <- Link;  // Juste mais sémantiquement faux
 ```
 
 Nomenclature des nom de variables
+
 1. 1er mot en minuscule
 2. 1ere lettre du mot suivant en majuscule
 3. Reste du mot en minuscule
 4. Revenir en 2 si présence d'un autre mot
 
 Entrées / sorties:
-* Favoriser les interactions avec l'utilisateur soit:
-  * En demandant une saisie clavier
-  * En provoquant un affichage écran
+
+- Favoriser les interactions avec l'utilisateur soit:
+  - En demandant une saisie clavier
+  - En provoquant un affichage écran
 
 Entrée:
 
@@ -200,6 +211,7 @@ afficher(superPlombier); // Sortie: Mario
 ```
 
 Compression d'affichage:
+
 ```cpp
 afficher ("mon héro est : ");
 afficher (superPlombier);
@@ -219,6 +231,7 @@ afficher(superPlombier, " est mon héro")
 ```
 
 #### Types
+
 Booléen:
 
 Identification: `boolean`
@@ -239,6 +252,7 @@ declarer question : boolean <- toBe OU notToBe; // question est vrai
 ```
 
 Éviter
+
 ```cpp
 declarer jeSuisUnMage : boolean <- vrai;
 
@@ -283,6 +297,7 @@ Opérations de comparaison: `<` `<=` `=>` `>` (produisent un booléen)
 Opérations d'identité: `vaut` `ne_vaut_pas` (produisent un booléen)
 
 Fonctions mathématiques:
+
 ```cpp
 modulo (Ent_1, Ent_2);        // Retourne le reste de la division entière
 
@@ -335,6 +350,7 @@ Opérations de comparaison: `<` `<=` `=>` `>` (produisent un booléen)<br/>
 Opérations d'identité: `vaut` `ne_vaut_pas` (produisent un booléen)
 
 Fonctions applicables:
+
 ```cpp
 tolower (unCaract); // Renvoie le caractère en minuscule (uniquement si c’est une majuscule)
 toupper (unCaract); // Renvoie le caractère en majuscule (uniquement si c’est une minuscule)
@@ -386,6 +402,198 @@ afficher(taille(tabInt));   // 2
 afficher(tabInt[3]);        // La case n'existe plus
 ```
 
+`2026-09-09`
+
+Chaine de caractères
+
+Identification: `string`
+
+Valeurs: `"a"`, `"a\nB\nc"`, `"AEIOUY\""`
+
+Opérations: `+`
+
+Opérations de comparaison: `<` `<=` `=>` `>`
+
+Opérations d'identité: `vaut` `ne_vaut_pas`
+
+Fonctions applicables:
+
+```cpp
+taille(chaine);     // Retourne la taille de la chaîne de caractères
+taille("AEIOUY\""); // 7
+taille("");         // 0
+
+declarer chaine <- string;
+chaine <- "AEIOUY\"";
+chaine <- chaine + "0123456789";
+taille(chaine);     // 17
+```
+
+### Boucles
+
+Boucle `boucle`
+
+```cpp
+boucle // Démarre la boucle
+  // Contenu de la boucle
+  action1;
+  si (cond1) sortie; // Stopper et sortir de la boucle
+  action2;
+  si (cond2) sortie; // Une boucle peut contenir plusieurs sorties
+  action3;
+  si (cond3) sortie; // etc.
+fboucle
+```
+
+Boucle `tant_que` / `jusqua`
+
+```cpp
+repeter // Schéma répétitif
+  // Contenu de la boucle
+  action1;
+  action2;
+jusqua (cond)
+
+tant_que (sa_longueur > 30cm)
+
+jusqua (sa_longueur <= 30)
+faire
+  enlever 30cm
+  stocker nouveau morceau
+ffaire
+```
+
+Equivalent:
+
+```cpp
+boucle
+  si (cond1) sortie;
+  action1;
+  action2;
+  action3;
+fboucle
+
+jusqua (cond1)
+faire
+  action1;
+  action2;
+  action3;
+ffaire
+
+---
+
+boucle
+  action1;
+  action2;
+  action3;
+  si (cond1) sortie;
+fboucle
+
+repeter
+  action1;
+  action2;
+  action3;
+jusqua (cond1)
+```
+
+Boucle `pour`
+
+```cpp
+pour (i variant_de 1 a 100)
+faire
+  afficher("Bonjour");
+ffaire
+
+---
+
+declarer tabInt : tableau_de entier;
+
+pour (i variant_de 0 a taille(tabInt) - 1)
+faire
+  afficher(tabInt[i]);
+ffaire
+
+pour (i variant_de taille(tabInt) - 1 a 0 descendant)
+faire
+  afficher(tabInt[i]);
+ffaire
+```
+
+Instruction `continue`
+
+Remonte au début de la boucle
+
+```cpp
+tant_que (NON victoire)
+faire
+  prendreUnePotion;
+  si (NON beaucoupDeVie) continue;
+  attaquer;
+```
+
+Exemple compteur:
+
+```cpp
+declarer compteur : entier_naturel;
+compteur <- 0;
+
+boucle
+  afficher("bonjour")
+  comtpeur <- compteur + 1;
+  si (compteur vaut 100) sortie;
+```
+
+Exemple contenu tableau:
+
+```cpp
+declarer tabReel : tableau_de reel;
+declarer i : entier_naturel;
+i <- 0;
+
+tant_que (i < taille(tabReel))
+faire
+  afficher(tabReel[i])
+  i <- i + 1;
+ffaire
+```
+
+### Sous-programme
+Algorithme qui a:
+- un identificateur nommé
+- des spécifications
+- a éventuellement des paramètres
+- retourne éventuellement un résultat
+
+Peut être appelé avec `nomProcedure(param1, param2, ...)`.
+
+```cpp
+procedure afficherNFoisBonjour(n : in entier_naturel)
+debut
+  pour (i variant_de 1 a n)
+  faire
+    afficher("bonjour");
+  ffaire
+fin
+```
+
+Marqueurs:
+- `in`: marqueur d'entrée, non modifiable
+- `out`: marqueur de sortie qui sera modifié
+- `in_out`: marqueur d'entrée qui sera modifié
+
+Met en facteur du code:
+- Séquence d'instruction réutilisable
+- Ecrite une seule fois
+- Mise sous forme d'un sous-programme
+
+### Fonction
+```algo
+procedure sqrt(valInit : in reel, result : out reel);
+fonction sqrt(valInit : in reel) renvoie reel;
+```
+
+## Prédicat
+Fonction qui renvoie systématiquement un booléen
 
 ---
 

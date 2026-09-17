@@ -187,7 +187,7 @@ Involution?
 
 Littératie: capacité de repérer, classer, comprendre, générer et évaluer de l'information, à partir de l'IA de d'internet
 
-## CM1-3 Introduction
+## CM2 Introduction
 `2026-09-08`
 
 ```
@@ -293,9 +293,18 @@ Code|Description|Exemple
 `.`|Répertoire courant|`find . -ls`
 `..`|Répertoire parent|`cd ..`
 `~`|Répertoire personnel|`cd ~`
----|Globin patterns|---
+---|Globing patterns|---
 `'`, `"`, `\`|Echappement des caractères spéciaux|`ls 'a*'`, `ls "x-y"`, `echo -e "x\ty"`
-`\``|Evaluation préalable de la commande|`chown \`id -u \` dir`
+```|Evaluation préalable de la commande|`chown \`id -u \` dir`
+---|Gestion de la sécurité|---
+`whoami`|Afficher nom / identifiant de l'utilisateur|`whoami`
+`chmod`|Changer le sdroits d'accès|`chmod 644 file`
+`umask`|Définir les droits par défaut|`umask 0022`
+`id`|Afficher les attributs (UID, GID, etc.)|`id`
+`finger`|Afficher les données d'un utilisateur|`finger user`
+`groups`|Afficher les groupes d'in utilisateur|`groups` `groups user`
+`sudo`|Exécuter comme `root`|`sudo apt-get update`
+
 
 Chemin absolu: Invariant, commence par `/` ou `~`<br/>
 Chemin relatif: Variable
@@ -324,13 +333,82 @@ Globing patterns (filtres)
 - Pas de standardisation
 - Symboles communs
   - `.`: n'importe quel caractère
-  - `\\`: échapper (banaliser) un caractère
+  - `\`: échapper (banaliser) un caractère
   - `[]`: un des caractères au choix parmi ceux entre crochets
   - `^`, `$`: début/fin (`^a`,`a$`)
   - Quantifieurs:
     - `?`: zéro ou une fois
     - `*`: zéro, une ou plusieurs fois
     - `+`: une ou plusieurs fois
+
+### Permissions
+
+Tout UNIX utilise un système de droits pour lire (r), écrire (w) ou exécuter (x)
+
+Binaire `r` `w` `x`|Décimal|Droits
+:-:|:-:|:-:
+`0` `0` `0`|0|Aucun
+`0` `0` `1`|1|Aucun
+`0` `1` `0`|2|Aucun
+`0` `1` `1`|3|Aucun
+`1` `0` `0`|4|Aucun
+`1` `0` `1`|5|Aucun
+`1` `1` `0`|6|Aucun
+`1` `1` `1`|7|Aucun
+
+### Variable d'environnement shell
+- `HOME`: chemin du répertoire personnel
+- `PWD`: répertoire courant
+- `PS1`: *prompt*
+- `PATH`: liste des répertoires de recherche des commandes
+
+### `.bash_profile`, `.bashrc`, `.bash_logout`
+Exécuter au démarrage de session:
+- `.bash_profile`: au démarrage d'une nouvelle session
+- `.bashrc`: au démarrage d'un nouveau shell
+- `.bash_logout`: à l'arrêt d'un `shell`
+
+### Script `bash`
+- Exécution:
+  - Par défaut: `bash file`
+  - Fichier exécutable: `./file` ou `~/file`
+  - Script dans `PATH`: `file`
+- Code de retour (également avec `exit`)
+  - `0`: script a réussi
+  - `1` à `255`: erreur
+- Commence par: `#!/bin/bash`
+- Commentaire: `#`
+
+## CM3-1 Installation et ocnfiguration des OS
+### Systèmes de fichiers
+- `NFTS`
+  - Structure: B-arbre
+  - Permissions: `ACL`
+  - Compression
+  - Windows & Linux
+- `ext4`
+  - Structure liste chaînée
+  - Permissions: `POSIX`
+  - Pas de fragmentatoin
+  - Linux
+
+### Installation de paquets
+`apt-get`
+- Gestionnaire de paquets
+- Outil à utiliser en ligne de commande
+- Utilise des dépôts APT
+- Mise à jour de la liste des paquets : `apt-get update`
+- Installation : `apt-get install packet`
+- Mise à jour OS : `apt-get dist-upgrade`
+- Mise à jour des paquets installés : `apt-get upgrade`
+- Désinstallation : `apt-get remove packet`
+- Effacer les installeurs (pas les paquets) : `apt-get clean`
+
+### Rendre Windows utilisable
+- Chocolatey en gestionnaire de paquet
+- WSL
+
+
 
 ---
 `mmartin.nevot@gmail.com`
