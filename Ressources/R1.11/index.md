@@ -125,9 +125,53 @@ Développement de radios libes et des radios pirates
 
 ### Communication de masse
 Ecole de Columbia et le paradigme des effets limités
-- Merton et Gaudet, Lazarsfeld: un élément intermédiaire entre le point initial et le point final du processus de communication
-- Deux études, publiées dans *The People's Choice* (1944) et *Personal Influence: the part played by people in the Flow od Mass Communication* (Lazarsfeld, Katz, 1955)
-- C'est la théorie du *two step flow of communication* (communication à double étage) !!schéma!!
+- **Merton** et **Gaudet**, **Lazarsfeld**: un élément intermédiaire entre le point initial et le point final du processus de communication
+- Deux études, publiées dans *The People's Choice* (1944) et *Personal Influence: the part played by people in the Flow od Mass Communication* (**Lazarsfeld**, **Katz**, 1955)
+- C'est la théorie du *two step flow of communication* (communication à double étage)
 
-Les **leaders opinion** sont des individus qui sont exposés aux médias, qui vont ensuite filtrer et interpréter l'information selon différents prismes et qui vont transmettre l'information à un public large.
+![Leaders d'opinion](https://upload.wikimedia.org/wikipedia/commons/9/92/Two_step_flow_of_communication.png)
 
+Les **leaders d'opinion** sont des individus qui sont exposés aux médias, qui vont ensuite filterer et interpréter l'information selon différents prismes et qui vont transmettre l'information à un public large.
+
+Ces stratégies de persuasion, visant à changer les habitudes de cuisine des maîtresses de maison, la notion de *gatekeeper* ou de contrôleur d'information et de compléter la notion de leader d'opinion informel.<br/>
+**Kurt Lewin** va récupérer les travaux de Lazarsfeld et les pousser plus loin. Il va utiliser les méthodes de commercialisation pour faire passer des informations. On parle donc de *leader d'opinion informel*.
+
+*Gatekeeper: "Gardien de la porte", "contrôleur de l'information", personne par laquelle passe l'information (ex: Google).*
+
+### L'explosion technologique
+Le **minitel** dans les 80's et 90's
+
+**Internet**: L'accès à internet est obtenu grâce à un fournisseur d'accès à internet via différents moyens de communication éléctronique: réseau téléphonique, ADSL, fibre optique, etc. 55% de la population mondiale (4.2Md) utilise internet.
+
+Bilan et perspectives: Une communication d'influence, au niveai des *mass media* avec une portée politique.
+
+## 3. La communication télégraphique
+### Notion très large
+Le terme "communication télégraphique" est entré dans le langage courant fin XVIII<sup>e</sup> début IXX<sup>e</sup> siècle et ce terme désigne globalement la transmission des messages (le télégramme) d'un point géographique A à un point géographique B par l'utilisation d'une machine a code.
+
+### De l'émetteur au destinataire
+- Warren Weaver
+- Norbert Wiener
+
+Plusieurs chercheurs universitaires vont schématiser le fonctionnement de la communication, et il existe différents modèles. Parmis eux: **Claude Elwood Shannon**, ingénieur électricien à *Bell Telephone Laboratories* et **Warren Weaver**, philosophe et mathématicien. Ils ont été engagés pendant la 2<sup>nde</sup> guerre mondiale pour décrypter les codes ennemis et vont plus tard élaborer la première modélisation de la communication entre machines clair et simple: le schéma de **Claude Shannon**, parfois utilisé pour structurer la communication humaine.
+Ils publient en 1948 *The Mathematical Theory of communication*.
+
+![e](https://www.espacesoignant.com/files/img/articles/cours/schema-de-la-communication-shannon-weaver.png)
+
+Ils vont introduire la notion de "bruit" afin de déterminer le phénomène de "brouillage" des messages pendant la 2<sup>nde</sup> guerre mondiale.
+
+- La source énonce un message
+- Le message est codé par un Emetteur et transformé en signal
+- Le signal est acheminé par un canal qui peut être brouillé
+- La récepteur va décoder le signal et reconstituer le message et transmis au destinataire
+
+Si ce schéma est encore enseigné aujourd'hui, il n'en reste pas moins trop simpliste et incomplet pour détailler la communication humaine, affirmé par **Shannon**. Depuis 1949, de nombreux travaux vont mettre en évidence des travaux plus adaptés à la communication humaine.
+
+### La conception cybernétique de Wiener
+- Norbert Wiener
+- Professeur de C. Shannon, Ingénieur
+- Chargé de travailler sur l'ajustement des tirs de la DCA
+- Découvre le phénomène de feed-back
+- 1948: *Cybernetics or control and communication in the Animal and Machine*
+
+Selon Norbert Wiener, le conflit de la 2<sup>nde</sup> s'explique en grande partie par un problème de communication. Il va proposer de combler ce déficit de communication entre différents acteurs de la guerre en faisant intervenir des intelligences artificielles.

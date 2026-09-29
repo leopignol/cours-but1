@@ -1,8 +1,8 @@
-# R1.01
+# R1.01: Initiation au développement
 
 `2026-09-03`
 
-## Initiation au développement
+## Algorithmique
 
 algorithmique (al-khuwarismi)
 
@@ -10,7 +10,7 @@ Séquence d'opérations visant à la résolution d'un problème en un temps dini
 
 attention aux spécifications (apollo/soyouz, ariane 5)
 
-10 règles de la nasa:
+10 règles de la NASA:
 
 1. Avoid complex flow constructs, such a `goto` and `recursion`
 2. All loops must have fixed bounds. This prevents runaway code
@@ -592,8 +592,151 @@ procedure sqrt(valInit : in reel, result : out reel);
 fonction sqrt(valInit : in reel) renvoie reel;
 ```
 
-## Prédicat
+### Prédicat
 Fonction qui renvoie systématiquement un booléen
+
+## Développement
+### Types
+Nom|ID |Valeurs|Opérations de comparaison|Opérations d'identité|Autres opérateurs|Fonctions|Prédicats|Notes
+:--|:-:|:-----:|:-----------------------:|:-------------------:|:---------------:|:-------:|:-------:|:---:
+Booléen|`bool`|`true` (vrai) ou `false` (faux)|-|`==` `!=`|`!` (négation)|-|-|-
+Entier|`int`|N'importe quel nombre entier entre `-2,147,483,648` et `2,147,483,647`|`<` `<=` `>=` `>`|`==` `!=`|`+` `-` `*` `/`|-|-|Peut être non signé avec `unsigned int`
+Entier court|`short`|N'importe quel nombre entier entre `-32,768` et `32,767`|`<` `<=` `>=` `>`|`==` `!=`|`+` `-` `*` `/`|-|-|Peut être non signé avec `unsigned short`
+Entier long|`long long`|N'importe quel nombre entier entre `-9,223,372,036,854,775,808` et `9,223,372,036,854,775,807`|`<` `<=` `>=` `>`|`==` `!=`|`+` `-` `*` `/`|-|-|Peut être non signé avec `unsigned long long`
+Réel|`float`|N'importe quel nombre réel|`<` `<=` `>=` `>`|`==` `!=`|`+` `-` `*` `/`|-|-|Peut doubler la précision avec `double` et quadrupler avec `double double`
+Caractère|`char`|N'importe quel caractère ascii entre `'`|`<` `<=` `>=` `>`|`==` `!=`|-|`tolower(<char>)`, `toupper(<char>)`|`isupper(<char>)`, `islower(<char>)`, `isalpha(<char>)`, etc.|`wchar_t` codé sur 4 octets<br/>Incrémentation (`++<char>`) et décrémentation (`--<char>`)<br/>Caractère spéciaux: `'\t'` `'\n'` `'\r'` `'\''`
+Chaine de caractère|`string`|N'importe quelle suit de `char` entre `"`|`<` `<=` `>=` `>`|`==` `!=`|`+` (concaténer)|`<string>.size()`|-|Accès à un élément avec `<string>[n]` (de `0` à `<string>.size() - 1`)
+Tableau|`vector<type>`|Une liste de valeurs de type `<type>`|-|-|-|`<vector>.size()`, `<vector>.push_back(<type>)`, `<vector>.resize(<int>)`|`<vector>.empty()`|Accès à un élément avec `<vector>[n]` (de `0` à `<vector>.size() - 1`)
+
+### Boucle `while`
+```cpp
+while (condition)   | while (condition) {
+{                   |   ...
+  ...               |   ...
+}                   | }
+```
+
+Exemple:
+```cpp
+unsigned long long i = 0; // size_t i;
+
+while (i < str.size()) {
+  cout << str[i] << endl;
+  ++i;
+}
+```
+---
+```cpp
+do {
+  ...
+}
+while (condition);
+```
+
+### Boucle `for`
+```cpp
+for ([exp1]; [exp2]; [exp3]) {
+  ...
+}
+```
+`exp1`: Avant l'entrée dans l'itération<br/>
+`exp2`: Condition de continuation<br/>
+`exp3`: Avant la prochaine itération
+```cpp
+for (size_t i = 0; i < str.size(); ++i) {
+  cout << str[i] << endl;
+}
+```
+#### Instruction `break`
+```cpp
+for ([exp1]; [exp2]; [exp3]) {
+  ...
+  if (condition) break; // Sort de la boucle
+  ...
+}
+```
+#### Instruction `continue`
+```cpp
+for ([exp1]; [exp2]; [exp3]) {
+  ...
+  if (condition) continue; // Finit prématurément l'itération
+  ...
+}
+```
+
+---
+
+
+### Schéma `switch` / `case`
+```cpp
+switch (<int>) {
+case <literal1>:
+  // Executes if <int> == <literal1>
+  break;
+case <literal2>:
+  // Executes if <int> == <literal2>
+  break;
+case <literal3>:
+case <literal4>:
+  // Executes if <int> == <literal3> || <int> == <literal4>
+  break;
+default:
+  // Executes if no other branch has executed
+}
+```
+
+### Boucle `for` pour les collections
+```cpp
+for ([const] type &var : collectionVar){
+  ...
+}
+```
+
+### Sous-programmes
+#### Procédures
+```cpp
+void procName(const type1 &var1, const type2 &var2, ...);
+```
+#### Fonctions
+```cpp
+returnType fctName(const type1 &var1, const type2 &var2, ...);
+```
+#### Passage de paramètre
+- `in`: `const type& name`
+- `out`: `type& name`
+- `in_out`: `type& name`
+
+### Tableaux
+```cpp
+
+```
+
+### Manipulateurs `setw` et `setfill`
+Force l'affichage d'un `int` sur `n` caractères
+```cpp
+int a(10), b(20), c(30), d(40)
+cout << setw(4) << a << setw(4) << b << endl; // __10__20
+cout << setfill('x') << setw(4) << c
+     << setfill('?') << setw(4) << d << endl; // xx30??40
+```
+
+### Assertion
+```cpp
+#include <cassert>
+
+...
+
+int i;
+assert(i == 0);
+```
+```cpp
+#include <EasyAssert.h>
+
+...
+
+int i;
+EASY_ASSERT(i == 0);
+```
 
 ---
 
@@ -612,3 +755,5 @@ https://m-vdi-etu-ha.univ-amu.fr/
 https://casali.site/category/r1-01-init-dev/r1-01-planning/
 
 https://casali.site/category/r1-01-init-dev/r1-01-mini-tests/
+
+I102-104

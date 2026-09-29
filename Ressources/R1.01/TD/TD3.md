@@ -148,7 +148,7 @@ debut
       compteur <- 0;
     sinon
       afficher(c)
-    fsi    
+    fsi
   ffaire
 fin
 ```
