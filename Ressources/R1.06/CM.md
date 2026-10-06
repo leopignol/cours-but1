@@ -1,23 +1,24 @@
 $\newcommand{\eqdef}{\overset{\mathrm{def}}{=\mathrel{\mkern-3mu}=}}$
 $\newcommand{\ssi}{\Longleftrightarrow}$
 # R1.06 Mathématiques Discrètes
+```
 - Tests:
   - Test 1: 14/10 (Chapitre 1-3)
   - Test 2: 10/11 (Chapitre 4-7)
   - Test 3: 18/12
 - TD/TP:
-  - ┌ Test 1 TD1
-  - │ TD2
-  - └ TD3
-  - ┌ Test 2 TD4
-  - │ TD5
-  - │ TD6 révisions
-  - └ TP1
-  - ┌ Test 3 TD7
-  - │ TD8
-  - │ TD9
-  - │ TP2
-  - └ TP3 révisions
+  - / Test 1 TD1
+  - | TD2
+  - \ TD3
+  - / Test 2 TD4
+  - | TD5
+  - | TD6 révisions
+  - \ TP1
+  - / Test 3 TD7
+  - | TD8
+  - | TD9
+  - | TP2
+  - \ TP3 révisions
 - Tests contrôle continu:
   1. TCC (A) 22/09
   2. TCC (A) 29/09
@@ -27,6 +28,7 @@ $\newcommand{\ssi}{\Longleftrightarrow}$
   6. TCC (B) 23/11
   7. TCC (B) 1/12
   8. TCC (B) 7/12
+```
 
 Les **mathématiques discrètes**, parfois appelées *mathématiques finies*, sont l'atude des structures mathématiques fondamentalement **discrètes**, par opposition aux structures continues.
 

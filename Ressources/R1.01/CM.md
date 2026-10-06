@@ -625,7 +625,9 @@ while (i < str.size()) {
   ++i;
 }
 ```
+
 ---
+
 ```cpp
 do {
   ...
@@ -715,9 +717,9 @@ returnType fctName(const type1 &var1, const type2 &var2, ...);
 Force l'affichage d'un `int` sur `n` caractères
 ```cpp
 int a(10), b(20), c(30), d(40)
-cout << setw(4) << a << setw(4) << b << endl; // __10__20
+cout << setw(4) << a << setw(4) << b << endl; // '  10  20'
 cout << setfill('x') << setw(4) << c
-     << setfill('?') << setw(4) << d << endl; // xx30??40
+     << setfill('?') << setw(4) << d << endl; // 'xx30??40'
 ```
 
 ### Assertion

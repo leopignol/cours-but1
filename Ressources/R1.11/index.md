@@ -126,12 +126,12 @@ Développement de radios libes et des radios pirates
 ### Communication de masse
 Ecole de Columbia et le paradigme des effets limités
 - **Merton** et **Gaudet**, **Lazarsfeld**: un élément intermédiaire entre le point initial et le point final du processus de communication
-- Deux études, publiées dans *The People's Choice* (1944) et *Personal Influence: the part played by people in the Flow od Mass Communication* (**Lazarsfeld**, **Katz**, 1955)
+- Deux études, publiées dans *The People's Choice* (1944) et *Personal Influence: the part played by people in the Flow of Mass Communication* (**Lazarsfeld**, **Katz**, 1955)
 - C'est la théorie du *two step flow of communication* (communication à double étage)
 
 ![Leaders d'opinion](https://upload.wikimedia.org/wikipedia/commons/9/92/Two_step_flow_of_communication.png)
 
-Les **leaders d'opinion** sont des individus qui sont exposés aux médias, qui vont ensuite filterer et interpréter l'information selon différents prismes et qui vont transmettre l'information à un public large.
+Les **leaders d'opinion** sont des individus qui sont exposés aux médias, qui vont ensuite filtrer et interpréter l'information selon différents prismes et qui vont transmettre l'information à un public large.
 
 Ces stratégies de persuasion, visant à changer les habitudes de cuisine des maîtresses de maison, la notion de *gatekeeper* ou de contrôleur d'information et de compléter la notion de leader d'opinion informel.<br/>
 **Kurt Lewin** va récupérer les travaux de Lazarsfeld et les pousser plus loin. Il va utiliser les méthodes de commercialisation pour faire passer des informations. On parle donc de *leader d'opinion informel*.
@@ -175,3 +175,51 @@ Si ce schéma est encore enseigné aujourd'hui, il n'en reste pas moins trop sim
 - 1948: *Cybernetics or control and communication in the Animal and Machine*
 
 Selon Norbert Wiener, le conflit de la 2<sup>nde</sup> s'explique en grande partie par un problème de communication. Il va proposer de combler ce déficit de communication entre différents acteurs de la guerre en faisant intervenir des intelligences artificielles.
+
+Le schéma de communication de Wiener de celui de Claude Shannon et Warrent Weaver. Il n'est pas linéaire mais circulaire et introduit la notion de "feedback" (rétroaction).
+
+![e](./img/schema-norbert-wiener.png)
+
+Wiener adopte une approche cybernétique dans son étude de la communication, c'est-à-dire qu'il analyse globalement le système en s'intéressent à tous les éléments engagés et à leur interaction.
+
+L'action d'un élément sur un autre entraine en retour une réponse de la part du deuxième élément sur le premier.
+
+Il existe deux types de feedback: positif qui conduit à accentuer le phénomène et le négatif qui aboutit à une régulation ou un amortissement du phénomènes.
+
+1. Le **référent**: C'est le sujet du message, ce dont on parle.
+2. Le **contexte**: C'est l'environnement dans lequel a lieu la communication: le lieu, le moment, l'activité.
+3. Le **récepteur**: C'est celui qui reçoit le message, qui le lit, qui l'entend: un client.
+4. Le **code**: Le message est codé l'émetteur et décodé par le récepteur. Il faut connaître le code pour comprendre le message.
+5. Le **message**: C'est l'information transmise selon une certaine forme, ce qui est écrit, ce qui est dit.
+6. Le **canal**: C'est le support du message entre l'émetteur et le récepteur, le terme en latin *medium* qui signifie 'intermédiaire'.
+7. L'**émetteur**: C'est celui qui envoie le message, qui écrit, qui parle
+
+### Théorie de la communication à deux étages (two-step flow of communication)
+
+## 4. Communication orchestrale
+Il existe des codes:
+  - Couleurs
+  - Odeurs
+  - Procémiques
+  - Kinésiques
+  - Temporels
+Ils forment l'univers culturel d'un individu
+
+Des chercheurs en sciences sociales vont décider de prendre le contrepied de ces théories et ils vont considérer que chaque situation de comminucation va nécessiter un modèle propre pour illustrer sa complexité. Ces chercheurs vont donc parler de *communication orchestrale*
+
+La **communication orchestrale**: la communication dans son ensemble et elle ne se limite pas a un échange verbale, elle intègre tout les signaux partagés lors d'une situation de communication entre deux humains: la voix, l'intonation, les gestes, le non verbal.
+
+Ainsi ces chercheurs communiquer revient a rentrer dans l'orchestre, chacun en lisant et jouant sa partition, participe à une symphonie.
+
+--- 
+Affligem
+
+Bière artisanale
+
+Abbaye, histoire, rusticité
+
+Texte prévention alcool illisible
+
+Accessible
+
+Vient de l'abbaye "Affligem"

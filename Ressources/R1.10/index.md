@@ -18,3 +18,25 @@ The pair of mice fled to their hole by the arrival of the PC's owner, and they l
 5. Represent characters using binary
 
 Boucher, château, noël, attacher, bousculade, écouter, correspond, prêt immobilier, nestle, souvent, brouhaha, sorcière, adoucir, montre
+
+---
+
+## IBM 5100
+Released 1975
+First portable computer
+Attached to external monitor
+55lbs
+Much more lighter than previous computers
+
+## Commodore SX64
+Released 1984
+First portable computer with full color screen
+20lbs
+$995
+64kB RAM
+1MHz CPU
+Didn't sell well
+Popular amongst user groups and software developers
+Useful for copying software and giving demonstrations
+
+which operating system did the lenovo yoga used

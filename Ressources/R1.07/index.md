@@ -1,4 +1,5 @@
-
+# R1.07: Mathématiques fondamentales
+### Notes
 $$\Delta = b^2-4ac$$
 $$\text{Si }\Delta > 0\text{, alors:}$$
 $$x_1=\dfrac{-b-\sqrt{\Delta}}{2a}\;\;\;x_2=\dfrac{-b+\sqrt{\Delta}}{2a}$$
@@ -9,7 +10,7 @@ $$x_S=\dfrac{-b}{2a}\;\;\;y_S=\dfrac{-\Delta}{4a}$$
 ---
 $$f(x)=\sum_{i=0}^{d} a_ix^i$$
 
-# Chapitre 0: Remise à niveau
+## Chapitre 0: Remise à niveau
 Exercice 6.3:
 $$\dfrac{1}{2}x+\dfrac{3}{4}=\dfrac{x+1}{\dfrac{1}{2}+\dfrac{1}{3}}$$
 $$\dfrac{5}{12}x+\dfrac{5}{8}=x+1$$
@@ -96,3 +97,28 @@ $$x_1=\dfrac{-b-\sqrt{\Delta}}{2a}=\dfrac{-(-4)+\sqrt{4}}{2\cdot (1)}=3$$
 $$y_1=\dfrac{3}{x_1}=\dfrac{3}{1}=3$$
 $$y_1=\dfrac{3}{x_2}=\dfrac{3}{3}=1$$
 $$\text{Un seul rectangle possible: }3 \text{ par } 1$$
+
+## Chapitre 1: Systèmes linéaires
+Soient $x_1, \cdots, x_p$ des réels, On appelle *combinaison linéaire* de $x_1, \cdots, x_p$ à coefficients dans $\mathbb{R}$, une expression de la forme
+$$a_1x_1 + a_2x_2 + \cdots + a_px_p$$
+où $a_1, a_2, \cdots, a_p$ sont des *coefficients* réels.
+
+Exercice 1.a:
+$$\left\{\begin{array}{l}
+  2x_1 + 3x_2 = 6 \qquad L_1 \times (-3) \\
+  -3x_1 - 6x_2 = -4 \qquad L_2 \times (2)
+\end{array} \right.$$
+$$\left\{\begin{array}{l}
+  -6x_1 - 9x_2 = -18 \\
+  -6x_1 - 14x_2 = -8
+\end{array} \right.$$
+$$\left\{\begin{array}{l}
+  -6x_1 - 9x_2 = -18 \\
+  3x_2 = -10 \qquad (L_1 - L_2)
+\end{array} \right.$$
+
+Exercice 1.b:
+$$\left\{\begin{array}{l}
+  2x_1 + 3x_2 = 6 \qquad L_1 \times (-3) \\
+  -3x_1 - 6x_2 = -4 \qquad L_2 \times (2)
+\end{array} \right.$$
