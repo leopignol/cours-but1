@@ -1,5 +1,4 @@
-$\newcommand{\eqdef}{\overset{\mathrm{def}}{=\mathrel{\mkern-3mu}=}}$
-$\newcommand{\ssi}{\Longleftrightarrow}$
+
 # R1.06 Mathématiques Discrètes
 ```
 - Tests:
@@ -147,12 +146,12 @@ $F$|$F$|$F$
 
 #### L'opérateur d'implication
 Soient p et q des expressions booléennes, alors:
-$$p \Rightarrow q \eqdef \neg p \vee q$$
+$$p \Rightarrow q \overset{\mathrm{def}}{=\mathrel{\mkern-3mu}=} \neg p \vee q$$
 
 L'expression $p \Rightarrow q$ se traduit en français par "$p$ implique $q$" ou "si $p$ alors $q$."
 
 Parfous, nous utilisonsle symbole $\Leftarrow$ pour désigner l'**implication inverse**:
-$$p \Leftarrow q \eqdef q \Rightarrow p$$
+$$p \Leftarrow q \overset{\mathrm{def}}{=\mathrel{\mkern-3mu}=} q \Rightarrow p$$
 
 L'expression $p \Rightarrow q$ est évaluée ???
 
@@ -165,24 +164,24 @@ La règle $p \Rightarrow q$ ???
 #### L'opérateur "si et seulement si"
 L'opérateur "si et seulement si" est défini par la conjonction de deux implications:<br/>
 Soient $p$ et $q$ des expressions booléennes, alors:
-$$p \ssi q \eqdef (p \Rightarrow q)\wedge(q \Rightarrow p)$$
-$p$|$q$|$p \ssi q$
+$$p \Longleftrightarrow q \overset{\mathrm{def}}{=\mathrel{\mkern-3mu}=} (p \Rightarrow q)\wedge(q \Rightarrow p)$$
+$p$|$q$|$p \Longleftrightarrow q$
 :-:|:-:|:-----------------------:
 $V$|$V$|$V$
 $V$|$F$|$F$
 $F$|$V$|$F$
 $F$|$F$|$V$
 
-On constate que l'expression $p \ssi q$ est vraie lorsque les variables $p$ et $q$ ont la même valeur ???
+On constate que l'expression $p \Longleftrightarrow q$ est vraie lorsque les variables $p$ et $q$ ont la même valeur ???
 
 #### Evaluation d'une expression booléenne
 On évalue une expression booléenne de manière similaire à la plupart des expressions arithmétiques communes. Ainsi, il faut d'abord donner priorité aux expressions en parenthèses. Ensuite, on évalue l'expression selon l'ordre de priorité des opérateurs:
 ???
 
 Loi de De Morgan:
-$$\neg(p \wedge q) \ssi \neg p \vee \neg q$$
-$$\neg(p \vee q) \ssi \neg p \wedge \neg q$$
-$p$|$q$|$p \wedge q$|$\neg(p \wedge q)$|$\neg p$|$\neg q$|$\neg p \vee \neg q$|$\neg(p \wedge q) \ssi \neg p \wedge \neg q$
+$$\neg(p \wedge q) \Longleftrightarrow \neg p \vee \neg q$$
+$$\neg(p \vee q) \Longleftrightarrow \neg p \wedge \neg q$$
+$p$|$q$|$p \wedge q$|$\neg(p \wedge q)$|$\neg p$|$\neg q$|$\neg p \vee \neg q$|$\neg(p \wedge q) \Longleftrightarrow \neg p \wedge \neg q$
 :-:|:-:|:----------:|:----------------:|:------:|:------:|:------------------:|:---------------------------------------------------------:
 $V$|$V$|$V$|$F$|$F$|$F$|$F$|$V$
 $V$|$F$|$F$|$V$|$F$|$V$|$V$|$V$
@@ -191,24 +190,24 @@ $F$|$F$|$F$|$V$|$V$|$V$|$V$|$V$
 
 #### Propriétés de $\neg$, $\wedge$ et $\vee$
 Soit $p$ une expressoin booléenne, alors:
-- $(\neg(\neg p)) \ssi p$
-- $p \vee \neg p \ssi vrai$
-- $p \wedge \neg p \ssi faux$
+- $(\neg(\neg p)) \Longleftrightarrow p$
+- $p \vee \neg p \Longleftrightarrow vrai$
+- $p \wedge \neg p \Longleftrightarrow faux$
 
 Soient $p$, $q$ et $r$ des expressions booléennes, alors:
-- $p \wedge vrai \ssi p$ Elément neutre
-- $p \wedge faux \ssi faux$ Elément absorbant
-- $p \wedge p \ssi p$ Idempotence
-- $p \wedge q \ssi q \wedge p$ Commutativité
-- $(p \wedge q) \vee r \ssi p \vee (q \wedge r)$ Associativité
-- $(p \wedge q) \vee r \ssi (p \vee r) \wedge (q \vee r)$ ???
+- $p \wedge vrai \Longleftrightarrow p$ Elément neutre
+- $p \wedge faux \Longleftrightarrow faux$ Elément absorbant
+- $p \wedge p \Longleftrightarrow p$ Idempotence
+- $p \wedge q \Longleftrightarrow q \wedge p$ Commutativité
+- $(p \wedge q) \vee r \Longleftrightarrow p \vee (q \wedge r)$ Associativité
+- $(p \wedge q) \vee r \Longleftrightarrow (p \vee r) \wedge (q \vee r)$ ???
 
 Soient $p$, $q$, $r$ des expressions booléennes, alors:
-$$(p \ssi q) \wedge (q \ssi r) \Rightarrow (p \ssi r)$$
+$$(p \Longleftrightarrow q) \wedge (q \Longleftrightarrow r) \Rightarrow (p \Longleftrightarrow r)$$
 
 ### Contraposition
 Soient $p$ et $q$ des expressions booléennes, alors:
-$$p \Rightarrow q \ssi \neg q \Rightarrow \neg p$$
+$$p \Rightarrow q \Longleftrightarrow \neg q \Rightarrow \neg p$$
 
 ### Affaiblissement et renforcement
 Soient $p$ et $q$ des expressions booléennes, alors:
@@ -216,10 +215,10 @@ $$p \wedge q \Rightarrow p\;\;\text{Affaiblissement de la conjonction}$$
 $$p \Rightarrow p \vee q\;\;\text{Renforcement de la disjonction}$$
 
 ### Contraposition:
-Soient $p$ et $q$ deux expressions booléennes, démontrons $p \Rightarrow q \ssi \neg q \Rightarrow q$
-$$p \Rightarrow q \ssi \neg p \vee q\;\;\text{par définition}$$
-$$p \Rightarrow q \ssi \neg p \vee \neg(\neg q)\;\;\text{double négation}$$
-$$p \Rightarrow q \ssi \neg(\neg q) \vee \neg p\;\;\text{commutativité de la disjonction}$$
+Soient $p$ et $q$ deux expressions booléennes, démontrons $p \Rightarrow q \Longleftrightarrow \neg q \Rightarrow q$
+$$p \Rightarrow q \Longleftrightarrow \neg p \vee q\;\;\text{par définition}$$
+$$p \Rightarrow q \Longleftrightarrow \neg p \vee \neg(\neg q)\;\;\text{double négation}$$
+$$p \Rightarrow q \Longleftrightarrow \neg(\neg q) \vee \neg p\;\;\text{commutativité de la disjonction}$$
 ???
 
 ### Problème SAT
