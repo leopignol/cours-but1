@@ -1,0 +1,49 @@
+fonction estBienTrie(tab : in tableau_de entier) renvoie booleen
+debut
+  declarer i : entier_naturel <- 1;
+
+  tant_que (i < (taille(tab) - 1) ET_ALORS tab[i] > tab[i - 1])
+  faire
+    i <- i + 1;
+  ffaire
+  
+  renvoie i vaut taille(tab);
+fin
+
+procedure triSelection(tab : in_out tableau_de entier)
+debut
+  pour (i variant_de 0 a taille()) 
+  faire
+    
+  ffaire
+fin
+
+procedure afficher_tab(tab : in tableau_de entier, sep : in string)
+debut
+  pour (i variant_de 0 a taille(tab) - 2)
+  faire
+    afficher(tab[i], sep);
+  ffaire
+  afficher(tab[taille(tab) - 1]);
+  ligne_suivante;
+fin
+
+algorithme nom
+debut
+  declarer tab : tableau_de 7 entier;
+  tab[0] <- 3;
+  tab[1] <- 1;
+  tab[2] <- 5;
+  tab[3] <- 11;
+  tab[4] <- 19;
+  tab[5] <- 7;
+  tab[6] <- 27;
+
+  afficher_tab(tab, ", ");
+  afficher(estBienTrie(tab)); ligne_suivante;
+  
+  triSelection(tab);
+  
+  afficher_tab(tab, ", ");
+  afficher(estBienTrie(tab)); ligne_suivante;
+fin

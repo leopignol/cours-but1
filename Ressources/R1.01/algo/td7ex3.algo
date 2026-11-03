@@ -1,0 +1,24 @@
+fonction compterMot(chaine : in string) renvoie entier_naturel
+debut
+  declarer cpt : entier_naturel <- 0;
+  declarer i : entier_naturel <- 0;
+  jusqua (i vaut taille(chaine))
+  faire
+    cpt <- cpt + 1;
+    boucle
+      si (i vaut taille(chaine) OU_SINON chaine[i] vaut ' ')
+        sortie;
+      fsi
+      i <- i + 1;
+      afficher(i);
+      ligne_suivante;
+    fboucle
+  ffaire
+
+  renvoie cpt;
+fin
+
+algorithme nom
+debut
+  afficher(compterMot("abc def 3ok def afv 123"));
+fin

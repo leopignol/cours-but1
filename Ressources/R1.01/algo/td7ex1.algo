@@ -1,0 +1,18 @@
+fonction compterMot(chaine : in string) renvoie entier_naturel;
+
+algorithme mots
+debut
+  declarer chaine : string;
+
+  boucle
+    afficher("Entrez chaine: ");
+    saisir(chaine);
+
+    si (chaine vaut "") sortie;
+
+    afficher(chaine);
+    ligne_suivante;
+    afficher("Nombre de mots de la ligne: ", compterMot(chaine))
+    ligne_suivante;
+  fboucle
+fin

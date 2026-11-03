@@ -1,0 +1,53 @@
+fonction estCarDeMot(c : caractere) renvoie booleen
+debut
+  renvoie (islower(c) OU_SINON isupper(c));
+fin
+
+fonction compterMotEx2(chaine : in string) renvoie entier_naturel
+debut
+  declarer cpt : entier_naturel <- 0;
+  si (taille(chaine) > 0 ET_ALORS estCarDeMot(chaine[0]))
+    cpt <- cpt + 1;
+  fsi
+  pour (i variant_de 0 a taille(chaine) - 2)
+  faire
+    si (!estCarDeMot(chaine[i]) ET_ALORS estCarDeMot(chaine[i + 1]))
+      cpt <- cpt + 1;
+    fsi
+  ffaire
+
+  renvoie cpt;
+fin
+
+fonction compterMotEx3(chaine : in string) renvoie entier_naturel
+debut
+  declarer cpt : entier_naturel <- 0;
+  declarer i : entier_naturel <- 0;
+  boucle
+    tant_que(i < taille(chaine) ET_ALORS NON estCarDeMot(chaine[i]))
+    faire
+      i <- i + 1;
+    ffaire
+
+    si (i vaut taille(chaine))
+      sortie;
+    fsi
+
+    cpt <- cpt + 1;
+    
+    tant_que(i < taille(chaine) ET_ALORS NON estCarDeMot(chaine[i]))
+    faire
+      i <- i + 1;
+    ffaire
+  fboucle
+
+  renvoie cpt;
+fin
+
+algorithme nom
+debut
+  afficher(compterMotEx2("A440 123 _B73244 _25"));
+  ligne_suivante;
+  afficher(compterMotEx3("A440 123 _B73244 _25"));
+  ligne_suivante;
+fin

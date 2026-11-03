@@ -1,0 +1,35 @@
+fonction find(tab : in tableau_de entier, v : in entier) : renvoie entier_naturel
+debut
+  declarer s : entier_naturel <- 0;
+
+  tant_que (pos < taille(tab) ET_ALORS tab[pos] ne_vaut_pas v)
+  faire
+    pos <- pos + 1;
+  ffaire
+
+  renvoie pos;
+fin
+
+algorithme test_find
+debut
+  declarer N : entier_naturel;
+  afficher("Taille du tableau: ");
+  saisir(N);
+
+  declarer tab : tableau_de N entier;
+  GenereTabInt(tab, -250, 150);
+
+  afficherTabInt(tab, '\t', 10);
+  ligne_suivante;
+
+  declarer fugitif : entier;
+  afficher("Nombre à chercher: ");
+  saisir(fugitif);
+
+  declarer position : entier_naturel <- find(tab, fugitif);
+  si (position vaut taille(tab))
+    afficher("Le tableau ne contient pas ", fugitif);
+  sinon
+    afficher(fugitif, " apparait pour la 1ère fois à la position ", position);
+  fsi
+fin

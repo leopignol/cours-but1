@@ -21,4 +21,4 @@ Optimiseur d'images: https://squoosh.app/
 
 Compresseur d'images: https://compressor.io/
 
-Standard HTML: https://html.spec.whatwg.com/
+Standard HTML: https://html.spec.whatwg.org/

@@ -1,5 +1,3 @@
-$\newcommand{\eqdef}{\overset{\mathrm{def}}{=\mathrel{\mkern-3mu}=}}$
-$\newcommand{\ssi}{\Longleftrightarrow}$
 # R1.06 Mathématiques Discrètes
 ```
 - Tests:
@@ -147,12 +145,12 @@ $F$|$F$|$F$
 
 #### L'opérateur d'implication
 Soient p et q des expressions booléennes, alors:
-$$p \Rightarrow q \eqdef \neg p \vee q$$
+$$p \Rightarrow q \overset{\mathrm{def}}{=\mathrel{\mkern-3mu}=} \neg p \vee q$$
 
 L'expression $p \Rightarrow q$ se traduit en français par "$p$ implique $q$" ou "si $p$ alors $q$."
 
 Parfous, nous utilisonsle symbole $\Leftarrow$ pour désigner l'**implication inverse**:
-$$p \Leftarrow q \eqdef q \Rightarrow p$$
+$$p \Leftarrow q \overset{\mathrm{def}}{=\mathrel{\mkern-3mu}=} q \Rightarrow p$$
 
 L'expression $p \Rightarrow q$ est évaluée ???
 
@@ -165,24 +163,24 @@ La règle $p \Rightarrow q$ ???
 #### L'opérateur "si et seulement si"
 L'opérateur "si et seulement si" est défini par la conjonction de deux implications:<br/>
 Soient $p$ et $q$ des expressions booléennes, alors:
-$$p \ssi q \eqdef (p \Rightarrow q)\wedge(q \Rightarrow p)$$
-$p$|$q$|$p \ssi q$
+$$p \Longleftrightarrow q \overset{\mathrm{def}}{=\mathrel{\mkern-3mu}=} (p \Rightarrow q)\wedge(q \Rightarrow p)$$
+$p$|$q$|$p \Longleftrightarrow q$
 :-:|:-:|:-----------------------:
 $V$|$V$|$V$
 $V$|$F$|$F$
 $F$|$V$|$F$
 $F$|$F$|$V$
 
-On constate que l'expression $p \ssi q$ est vraie lorsque les variables $p$ et $q$ ont la même valeur ???
+On constate que l'expression $p \Longleftrightarrow q$ est vraie lorsque les variables $p$ et $q$ ont la même valeur ???
 
 #### Evaluation d'une expression booléenne
 On évalue une expression booléenne de manière similaire à la plupart des expressions arithmétiques communes. Ainsi, il faut d'abord donner priorité aux expressions en parenthèses. Ensuite, on évalue l'expression selon l'ordre de priorité des opérateurs:
 ???
 
 Loi de De Morgan:
-$$\neg(p \wedge q) \ssi \neg p \vee \neg q$$
-$$\neg(p \vee q) \ssi \neg p \wedge \neg q$$
-$p$|$q$|$p \wedge q$|$\neg(p \wedge q)$|$\neg p$|$\neg q$|$\neg p \vee \neg q$|$\neg(p \wedge q) \ssi \neg p \wedge \neg q$
+$$\neg(p \wedge q) \Longleftrightarrow \neg p \vee \neg q$$
+$$\neg(p \vee q) \Longleftrightarrow \neg p \wedge \neg q$$
+$p$|$q$|$p \wedge q$|$\neg(p \wedge q)$|$\neg p$|$\neg q$|$\neg p \vee \neg q$|$\neg(p \wedge q) \Longleftrightarrow \neg p \wedge \neg q$
 :-:|:-:|:----------:|:----------------:|:------:|:------:|:------------------:|:---------------------------------------------------------:
 $V$|$V$|$V$|$F$|$F$|$F$|$F$|$V$
 $V$|$F$|$F$|$V$|$F$|$V$|$V$|$V$
@@ -191,24 +189,24 @@ $F$|$F$|$F$|$V$|$V$|$V$|$V$|$V$
 
 #### Propriétés de $\neg$, $\wedge$ et $\vee$
 Soit $p$ une expressoin booléenne, alors:
-- $(\neg(\neg p)) \ssi p$
-- $p \vee \neg p \ssi vrai$
-- $p \wedge \neg p \ssi faux$
+- $(\neg(\neg p)) \Longleftrightarrow p$
+- $p \vee \neg p \Longleftrightarrow \text{vrai}$
+- $p \wedge \neg p \Longleftrightarrow \text{faux}$
 
 Soient $p$, $q$ et $r$ des expressions booléennes, alors:
-- $p \wedge vrai \ssi p$ Elément neutre
-- $p \wedge faux \ssi faux$ Elément absorbant
-- $p \wedge p \ssi p$ Idempotence
-- $p \wedge q \ssi q \wedge p$ Commutativité
-- $(p \wedge q) \vee r \ssi p \vee (q \wedge r)$ Associativité
-- $(p \wedge q) \vee r \ssi (p \vee r) \wedge (q \vee r)$ ???
+- $p \wedge \text{vrai} \Longleftrightarrow p$ Elément neutre
+- $p \wedge \text{faux} \Longleftrightarrow \text{faux}$ Elément absorbant
+- $p \wedge p \Longleftrightarrow p$ Idempotence
+- $p \wedge q \Longleftrightarrow q \wedge p$ Commutativité
+- $(p \wedge q) \vee r \Longleftrightarrow p \vee (q \wedge r)$ Associativité
+- $(p \wedge q) \vee r \Longleftrightarrow (p \vee r) \wedge (q \vee r)$ ???
 
 Soient $p$, $q$, $r$ des expressions booléennes, alors:
-$$(p \ssi q) \wedge (q \ssi r) \Rightarrow (p \ssi r)$$
+$$(p \Longleftrightarrow q) \wedge (q \Longleftrightarrow r) \Rightarrow (p \Longleftrightarrow r)$$
 
 ### Contraposition
 Soient $p$ et $q$ des expressions booléennes, alors:
-$$p \Rightarrow q \ssi \neg q \Rightarrow \neg p$$
+$$p \Rightarrow q \Longleftrightarrow \neg q \Rightarrow \neg p$$
 
 ### Affaiblissement et renforcement
 Soient $p$ et $q$ des expressions booléennes, alors:
@@ -216,11 +214,73 @@ $$p \wedge q \Rightarrow p\;\;\text{Affaiblissement de la conjonction}$$
 $$p \Rightarrow p \vee q\;\;\text{Renforcement de la disjonction}$$
 
 ### Contraposition:
-Soient $p$ et $q$ deux expressions booléennes, démontrons $p \Rightarrow q \ssi \neg q \Rightarrow q$
-$$p \Rightarrow q \ssi \neg p \vee q\;\;\text{par définition}$$
-$$p \Rightarrow q \ssi \neg p \vee \neg(\neg q)\;\;\text{double négation}$$
-$$p \Rightarrow q \ssi \neg(\neg q) \vee \neg p\;\;\text{commutativité de la disjonction}$$
+Soient $p$ et $q$ deux expressions booléennes, démontrons $p \Rightarrow q \Longleftrightarrow \neg q \Rightarrow q$
+$$p \Rightarrow q \Longleftrightarrow \neg p \vee q\;\;\text{par définition}$$
+$$p \Rightarrow q \Longleftrightarrow \neg p \vee \neg(\neg q)\;\;\text{double négation}$$
+$$p \Rightarrow q \Longleftrightarrow \neg(\neg q) \vee \neg p\;\;\text{commutativité de la disjonction}$$
 ???
 
 ### Problème SAT
 Une **instance du problème SAT** consiste en une équation booléenne contenant des variables libres. Une telle instance est dite **satisfiable** lorqu'il existe une assignation de ???
+
+### Démonstration
+#### Démonstrations avec $\forall$ ou $\exists$
+Supposons que nous devons démontrer une propriété de la forme suivante:
+$$\forall x \in X | P(x)$$
+
+Démonstration de 
+Soit $x \in X$, montrons quue P(x) est vrai.
+Alors pour telle raison [...]. Ce qui implique [...]. Et on peut en conclure que P(x)
+
+Supposons que nous voulons démontrer une expression de la forme suivante
+$$\exists x \in X | P(x)$$
+
+Cela demande de trouver un élément $x$ de l’ensemble $X$ dont on est sûr de l’existence,
+de plus il faut aussi choisir ce $x$ de telle sorte que ce $x$ satisfasse aussi la propriété $P$.
+
+La démonstration d’un énoncé commençant par un quantificateur existentiel $\exists$ sera
+toujours structurée comme suit :
+
+Démonstration de $\exists x \in X | P(x)$. Prenons $x$, choisi de telle façon. Un tel $x$ existe et appartient a $X$ car [...]<br>
+Montrons que P(x) est vrai.<br>
+Alors pour telles et telles raisons, on a donc [...]<br>
+Ce qui nous permet de conclure que P(x) est vrai.
+
+C.Q.F.D.
+
+#### Démonstrations utilisant l'arithmétique
+$$(\forall n \in N | (\exists m \in N | m > n))$$
+Soit $n \in N$. Montrons $\exists m \in N$ tel que $m > n$. Prenons $m = n + 1$.<br>
+Par les propriétés de l’arithmétique, un tel $m$ existe et $m \in N$.<br>
+Alors bien sûr, on a que $m = n + 1 > n$.
+
+**C.Q.F.D.**
+
+#### Démonstrations avec $\neg \forall$ ou $\neg \exists$
+$$\neg(\exists m \in \N^* | m > m^2)$$
+Par la loi de De Morgan, on peut transformer l’énoncé en
+$\forall m \in \N^* | \neg(m > m^2)$, c’est-à-dire
+$\forall m \in \N^∗ | (m \leq m^2)$. Démontrons donc ceci.<br>
+Soit $m \in \N^*$. Alors on a $m \geq 1$. En multipliant par $m$
+des deux côtes, on obtient $m \cdot m \leq 1 \cdot m$.
+Ce qui est équivalent à $m \leq m^2$.
+
+**C.Q.F.D.**
+
+#### Démonstration avec implication
+$$\text{Pour tout ensemble } S \text{ et } T\text{, on a } S \subseteq T \cup S.$$
+Soient $S$ et $T$ des ensembles. On veut démontrer que $(\forall e | e \in S \Rightarrow e \in T \cup S)$ par
+définition d’inclusion. Soit $e$ un element quelconque. Supposons $e \in S$.
+Comme $e \in S$, alors "$e \in T \text{ ou } e \in S$" est vrai.<br>
+Donc on a $e \in T \cup S$ par définition de l’union.
+
+**C.Q.F.D.**
+
+#### Démonstration avec ssi
+
+
+#### Démonstration par cas
+
+### Suites
+Une **suite** est une séquence d’éléments d’un ensemble.
+Un élément de cette suite est appelé un **terme** de la suite.

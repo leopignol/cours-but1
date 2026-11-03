@@ -1,0 +1,42 @@
+fonction compterDans(chaine : in string, cherche : in string) renvoie tableau_de entier
+debut
+  declarer resultat : tableau_de taille(cherche) entier;
+  pour (i variant_de 0 a taille(cherche))
+  faire
+    resultat[i] <- 0;
+  ffaire
+
+  pour (i variant_de 0 a taille(chaine) - 1)
+  faire
+    pour (j variant_de 0 a taille(cherche) - 1)
+    faire
+      si (chaine[i] vaut cherche[j])
+        resultat[j] <- resultat[j] + 1;
+        continue;
+      fsi
+    ffaire
+  ffaire
+
+  renvoie resultat;
+fin
+
+algorithme compterVoyelles
+debut
+  declarer kVoyelles : string <- "aeiouy";
+  declarer chaine : string;
+
+  afficher("Dans quelle chaine chercher? ");
+  saisir(chaine);
+
+  afficher(taille(chaine));
+  ligne_suivante;
+
+  declarer resultat : tableau_de entier
+    <- compterDans(chaine, kVoyelles);
+
+  pour (i variant_de 0 a taille(resultat))
+  faire
+    afficher(kVoyelles[i], ": ", resultat[i], " (", (resultat[i] * 100) / taille(chaine), "%)");
+    ligne_suivante;
+  ffaire
+fin

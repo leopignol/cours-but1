@@ -1,0 +1,24 @@
+fonction trouveCarDansStr(caract : in caractere,
+                          chaine : in string) renvoie entier_naturel
+debut
+  declarer pos : entier_naturel <- 0;
+  tant_que (pos < taille(chaine) ET_ALORS chiane[pos] ne_vaut_pas caract)
+  faire
+    pos <- pos + 1;
+  ffaire
+
+  renvoie pos;
+fin
+
+fonction trouveCarDansStr(caract : in caractere,
+                          chaine : in string,
+                          deb : in entier_naturel) renvoie entier_naturel
+debut
+  declarer pos : entier_naturel <- deb;
+  tant_que (pos < taille(chaine) ET_ALORS chaine[pos] ne_vaut_pas caract)
+  faire
+    pos <- pos + 1;
+  ffaire
+
+  renvoie pos;
+fin

@@ -1,0 +1,11 @@
+fonction isspace(c : in caractere) renvoie booleen
+debut
+  choix_sur c entre
+  cas ' ':
+  cas '\t':
+  cas '\n':
+    renvoie vrai;
+  fchoix
+
+  renvoie faux;
+fin

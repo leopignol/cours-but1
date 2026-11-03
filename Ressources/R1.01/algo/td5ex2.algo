@@ -1,0 +1,50 @@
+fonction comptCaract(caract : in caractere,
+                     chaine : in string) renvoie entier_naturel
+debut
+  declarer nb : entier_naturel <- 0;
+
+  pour (i variant_de 0 a (taille(chaine) - 1))
+  faire
+    si (chaine[i] vaut caract)
+      nb <- nb + 1;
+    fsi
+  ffaire
+
+  renvoie nb;
+fin
+
+algorithme comptageCaract
+debut
+  declarer caract : caractere;
+  declarer chaine : string;
+  declarer nb : entier_naturel;
+
+  afficher("Quel caractère chercher? ");
+  saisir(caract);
+
+  afficher("Dans quelle chaine chercher? ");
+  saisir(chaine);
+  
+  nb <- comptCaract(caract, chaine);
+
+  afficher("'", caract, "' est présent ", nb, " fois dans \"", chaine, "\".");
+  ligne_suivante;
+fin
+
+algorithme comptageCaractV2
+debut
+  declarer caract : caractere;
+  declarer chaine : string;
+  declarer nb : entier_naturel;
+
+  afficher("Quel caractère chercher? ");
+  saisir(caract);
+
+  afficher("Dans quelle chaine chercher? ");
+  saisir(chaine);
+  
+  nb <- comptCaractV2(caract, chaine);
+
+  afficher("'", caract, "' est présent ", nb, " fois dans \"", chaine, "\".");
+  ligne_suivante;
+fin

@@ -740,7 +740,424 @@ int i;
 EASY_ASSERT(i == 0);
 ```
 
----
+### Transtypage
+Converison d'une valeur d'un type (source) dans un autre (cible)
+#### Explicite
+```cpp
+carac = 'C';
+cout <<      (carac + kShift) << endl
+cout << (int)(carac + kShift) << endl
+cout << (char)(carac + kShift) << endl;
+```
+#### Implicite
+```cpp
+for (int i (0); i < int(minusc.size ()); ++i)
+	cout << minusc[i];
+```
+
+### Allègement de blocs
+```cpp
+for (int i (0); i < int(minusc.size ()); ++i){
+	cout << minusc[i];
+}
+
+for (int i (0); i < int(minusc.size ()); ++i)
+	cout << minusc[i];
+```
+### Allègement d'opérateurs
+```cpp
+i = i + expr;
+i += expr; // Fonctionne aussi pour les strings
+
+i = i - expr;
+i -= expr;
+
+i = i * expr;
+i *= expr;
+
+i = i / expr;
+i /= expr;
+
+i = i % expr;
+i %= expr;
+```
+
+### Incrémentation et décrémentation
+```cpp
+++i; // Incrémente i de 1 puis retourne la nouvelle valeur
+i++; // Incrémente i de 1 puis retourne l'ancienne valeur
+
+--i; // Incrémente i de -1 puis retourne la nouvelle valeur
+i--; // Incrémente i de -1 puis retourne l'ancienne valeur
+```
+
+### Opérateur ternaire
+```cpp
+char C;
+cin >> C;
+
+if (' ' == C || '\t' == C)
+  cout << c << " est un espace" << endl;
+else
+  cout << c << " n'est pas un espace" << endl;
+```
+
+```cpp
+char C;
+cin >> C;
+
+if (' ' == C || '\t' == C)
+  cout << c << " est";
+else
+  cout << c << " n'est pas";
+
+cout << " un espace" << endl;
+```
+
+```cpp
+char C;
+cin >> C;
+
+if (' ' == C || '\t' == C)
+  cout << c << " est";
+else
+  cout << c << " n'est pas";
+cout << "un espace" << endl;
+
+
+cout << c
+  << ((' ' == C || '\t' == C) ?
+    " est" : " n'est pas")
+  << " un espace" << endl;
+```
+
+### Structures
+Créer son propre type permettant de regrouper différents types
+
+```cpp
+struct RGBcolor {
+  short red;
+  short green;
+  short blue;
+};
+```
+
+Triable avec `std::sort`
+
+```cpp
+vector<RGBColor> vColor{255, 0, 0};
+
+bool sortRed(const RGBColor &left, const RGBColor &right){
+  return left.red <= right.red;
+}
+sort(vColor.begin(), vColor.end(), sortRed);
+```
+
+### Flux de sortie
+```cpp
+#include <fstream>
+using namespace std;
+
+ofstream ofs;
+ofs.open("test.txt"[, Mode XXX]);
+// OR
+ofstream ofs("test.txt"[, Mode XXX]);
+
+ofs << 10 << endl;
+ofs << true << endl;
+ofs << ‘a’ << endl;
+ofs << "coucou" << endl;
+
+ofs.close();
+```
+
+```sh
+$ more test.txt
+10
+1
+a
+coucou
+```
+
+Modes `ios_base`:
+ModeName|Signification|Accès
+:-------|:-----------:|:---:
+`out`|Output (sortie)|Accès au flux en écriture
+`in`|Input (entrée)|Accès au flux en lecture
+`binary`|Input (entrée)|Effectue les opérations d'E/S en mode binaire et non en mode texte
+`ate`|At end (à la fin)|Positionne la tête (de lecture) à la fin du fichier
+`app`|Append (ajout)|Les ajouts se font à la fin du fichier
+`trunc`|Truncate (troncature)|Supprime le contenu du fichier
+
+> [!NOTE]
+> On ne peut pas combiner `trunc` et `app`
+
+### Flux d'entrée
+```cpp
+#include <fstream>
+using namespace std;
+
+ifstream ifs;
+ifs.open("test.txt"[, Mode XXX]);
+// OR
+ifstream ofs("test.txt"[, Mode XXX]);
+
+if (!ifs.is_open()) {
+  cerr << "File not found" << endl;
+  exit(2);
+}
+
+/* Soit test.txt:
+coucou
+10
+1
+a
+*/
+
+string str;
+ifs >> str;
+cout << str << endl;            // coucou
+
+int x;
+ifs >> x;
+cout << x << endl;              // 10
+
+bool b;
+ifs >> b;
+cout << boolalpha << b << endl; // true
+
+char c;
+ifs >> c;
+cout << c << endl;              // a
+
+ifs.close();
+```
+
+> [!TIP]
+> Les modes `ios_base` sont les mêmes que pour les `ofstream`
+
+Lecture du contenu d'un fichier:
+```algo
+// On aimerait avoir un algorithme du type :
+
+tant_que (NON fin_de_fichier)
+faire
+  unType resultat <- lireQuelqueChose;
+  manipuler (resultat);
+ffaire
+
+// PB : on ne peut détecter la fin d’un fichier qu’après avoir fait une tentative de lecture.
+
+// Solution :
+
+boucle
+  unType resultat <- lireQuelqueChose;
+  si (finDeFichier) sortie;
+  manipuler (resultat);
+fboucle
+```
+Soit:
+```cpp
+while (true) {
+  aType varIdent = readSomething();
+  if (ifs.eof()) break;
+  manipulate(varIdent);
+}
+```
+
+#### Problème 1
+Lire un vecteur d’entier préalablement stocké:
+```cpp
+vector<int> V;
+
+while (true) {
+  int x;
+  ifs >> x;
+  if (ifs.eof()) break;
+  V.push_back(x);
+}
+```
+
+#### Problème 2
+Connaître le nombre de mots d’un fichier texte
+```cpp
+unsigned int wc(0);
+string str;
+
+while (true) {
+  ifs >> str;
+  if (ifs.eof()) break;
+  ++wc;
+}
+
+cout << setw(8) << wc << ' ' << __FILE__ << endl;
+```
+
+#### Problème 3
+Connaitre le nombre de caractères d’un fichier texte
+```cpp
+// Solution 1:
+unsigned int wc(0);
+char c;
+
+while (true) {
+  ifs >> c;
+  if (ifs.eof()) break;
+  ++wc;
+}
+
+cout << setw(8) << wc << ' ' << __FILE__ << endl;
+```
+
+```cpp
+// Solution 2:
+unsigned int wc = 0;
+char c;
+
+while (true) {
+  ifs.get(c);
+  if (ifs.eof()) break;
+  ++wc;
+}
+
+cout << setw(8) << wc << ' ' << __FILE__ << endl;
+```
+
+#### Problème 3
+Connaitre le nombre de lignes d’un fichier texte
+```cpp
+// Solution 1:
+unsigned int wc = 0;
+string str;
+
+while (true) {
+  getline(ifs, str);
+  if (ifs.eof()) break;
+  ++wc;
+}
+
+cout << setw(8) << wc << ' ' << __FILE__ << endl;
+```
+
+```cpp
+// Solution 2:
+unsigned int wc = 0;
+string str;
+
+for (getline(ifs, str); !ifs.eof(); getline(ifs, str))
+  ++wc;
+
+cout << setw(8) << wc << ' ' << __FILE__ << endl;
+```
+
+### Erreurs de lecture
+```cpp
+int i;
+for (;;) {
+  cout << "Taper un entier suivi de <CR> : ";
+  cin >> i;
+  if (cin.eof()) break;
+  cout << "i = " << i << endl;
+}
+```
+```
+Taper un entier suivi de <CR> : x10
+Taper un entier suivi de <CR> : i = 1075991360
+Taper un entier suivi de <CR> : i = 1075991360
+Taper un entier suivi de <CR> : i = 1075991360
+Taper un entier suivi de <CR> : i = 1075991360
+...
+```
+
+Solution avec `<ifstream>.fail()`
+```cpp
+int i;
+for (;;) {
+  cout << "Taper un entier suivi de <CR> : ";
+  cin >> i;
+  if (cin.eof()) break;
+  if (cin.fail())
+    cout << "echec de lecture" << endl;
+  else
+    cout << "i = " << i << endl;
+}
+```
+```
+Taper un entier suivi de <CR> : x10
+echec de lecture
+Taper un entier suivi de <CR> : echec de lecture
+Taper un entier suivi de <CR> : echec de lecture
+Taper un entier suivi de <CR> : echec de lecture
+Taper un entier suivi de <CR> : echec de lecture
+...
+```
+
+Solution avec `<ifstream>.fail()` et `<ifstream>.clear()`
+```cpp
+int i;
+for (;;) {
+  cout << "Taper un entier suivi de <CR> : ";
+  cin >> i;
+  if (cin.eof()) break;
+  if (cin.fail()){
+    cout << "echec de lecture" << endl;
+    cin.clear();
+    string buff;
+    getline(cin, buff);
+  }
+  else
+    cout << "i = " << i << endl;
+}
+```
+```
+Taper un entier suivi de <CR> : x10
+echec de lecture
+Taper un entier suivi de <CR> : 10
+i = 10
+Taper un entier suivi de <CR> : ^D
+```
+
+Solution non punitive (récupération des données)
+```cpp
+int i;
+for (;;) {
+  cout << "Taper un entier suivi de <CR> : ";
+  cin >> i;
+  if (cin.eof()) break;
+  if (cin.fail()){
+    cout << "echec de lecture" << endl;
+    cin.clear();
+    char c;
+    for (c = cin.peek(); !isdigit(c); c = cin.peek())
+      cin.get();
+  }
+  else
+    cout << "i = " << i << endl;
+}
+```
+```
+Taper un entier suivi de <CR> : xyz25
+echec de lecture
+Taper un entier suivi de <CR> : i = 25
+Taper un entier suivi de <CR> : ^D
+```
+
+```cpp
+string email;
+cout << "Entrer votre email : ";
+
+cin >> email;
+cout << email << endl;
+
+cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+unsigned int age;
+cout << "Entrer votre age : ";
+
+cin >> age;
+cout << age << endl;
+```
+# .
 
 Feuille d'amphi résumé chaque semaine sur l'amphi précédent
 

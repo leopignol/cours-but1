@@ -40,3 +40,17 @@ Popular amongst user groups and software developers
 Useful for copying software and giving demonstrations
 
 which operating system did the lenovo yoga used
+
+## BOPPP
+November 16th week
+
+Thank you for listening / thank you for your attention
+
+## Computers survey
+Question|Student 1|Student 2|Student 3|General
+:--|:-:|:-:|:-:|:-:
+Who's your favorite computer scientist?|MMN|Jeb|Linux Torvalds|Varied
+What is your favorite programming language?|C++|Python|C++|Mostly C++
+Do you prefer Windows or Linux|Linux|Windows|Linux|Mostly Linux
+What Linux distribution do you use?|Ubuntu|None|Ubuntu|Mostly Ubuntu
+What is the software you use the most?|FaceTime|LoL|FireFox|Varied

@@ -1,0 +1,31 @@
+fonction estCarDeMot(c : caractere) renvoie booleen
+debut
+  renvoie (
+    islower(c) OU_SINON
+    isupper(c) OU_SINON
+    isdigit(c) OU_SINON
+    c vaut '_'
+  );
+fin
+
+fonction compterMot(chaine : in string) renvoie entier_naturel
+debut
+  declarer cpt : entier_naturel <- 0;
+  si (taille(chaine) > 0 ET_ALORS estCarDeMot(chaine[0]))
+    cpt <- cpt + 1;
+  fsi
+  pour (i variant_de 0 a taille(chaine) - 2)
+  faire
+    si (!estCarDeMot(chaine[i]) ET_ALORS estCarDeMot(chaine[i + 1]))
+      cpt <- cpt + 1;
+    fsi
+  ffaire
+
+  renvoie cpt;
+fin
+
+algorithme nom
+debut
+  afficher(compterMot("A440 123 _B73244 _25"));
+  ligne_suivante;
+fin

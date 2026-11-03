@@ -1,0 +1,56 @@
+fonction isspace(c : in caractere) renvoie booleen
+debut
+  si (c vaut ' ' OU_SINON c vaut '\t' OU_SINON c vaut '\n')
+    renvoie vrai;
+  fsi
+
+  renvoie faux;
+fin
+
+fonction findFirstDoublon(chaine : in string, deb : in entier_naturel) renvoie entier_naturel
+debut
+  si (taille(chaine) < 2) renvoie taille(chaine);
+  declarer i : entier_naturel <- deb;
+  declarer trouve : booleen <- faux;
+  tant_que (i < taille(chaine) - 1 ET_ALORS NON (trouve))
+  faire
+    si (isspace(chaine[i]))
+      i <- i + 1;
+      continue;
+    fsi
+    si (chaine[i] vaut chaine[i + 1])
+      trouve <- vrai;
+      continue;
+    fsi
+    i <- i + 1;
+  ffaire
+  renvoie i;
+fin
+
+fonction comptDoublon(chaine : in string) renvoie entier_naturel
+debut
+  declarer cpt : entier_naturel <- 0;
+  declarer pos : entier_naturel <- 0;
+  boucle
+    pos <- findFirstDoublon(chaine, pos);
+    si (pos vaut taille(chaine)) sortie;
+    cpt <- cpt + 1;
+    pos <- pos + 1;
+  fboucle
+
+  renvoie cpt;
+fin
+
+algorithme doublons
+debut
+  declarer chaine : string;
+  declarer deb : entier_naturel;
+
+  afficher("Entrer chaine: ");
+  saisir(chaine);
+
+  declarer cpt : entier_naturel <- comptDoublon(chaine);
+  afficher(cpt, " doublons trouvé");
+
+  ligne_suivante;
+fin

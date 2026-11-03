@@ -1,0 +1,52 @@
+fonction supprimerElement(tab : in_out tableau_de entier, pos : in entier_naturel) renvoie entier
+debut
+  declarer result : entier <- tab[pos];
+
+  pour (i variant_de pos a taille(tab) - 2)
+  faire
+    tab[i] <- tab[i + 1];
+  ffaire
+
+  rendimentionner(tab, taille(tab) - 1);
+
+  renvoie result;
+fin
+
+procedure insertionElement(tab : in_out tableau_de entier, pos : in entier_naturel, val : in entier)
+debut
+  rendimentionner(tab, taille(tab) + 1);
+
+  pour (i variant_de taille(tab) - 1 a pos + 1 descendant)
+  faire
+    tab[i] <- tab[i - 2];
+  ffaire
+
+  tab[pos] <- val;
+fin
+
+procedure deplacerElement(tab : in_out tableau_de entier, dep : in entier_naturel, arr : in entier_naturel)
+debut
+  insertionElement(tab, arr, supprimerElement(tab, dep));
+fin
+
+algorithme nom
+debut
+  declarer tab : tableau_de entier;
+  rendimentionner(tab, 7);
+  tab[0] <- 2;
+  tab[1] <- 31;
+  tab[2] <- 20;
+  tab[3] <- 7;
+  tab[4] <- 4;
+  tab[5] <- 8;
+  tab[6] <- 9;
+  pour (i variant_de 0 a taille(tab) - 1)
+  faire
+    afficher(tab[i], ", ");
+  ffaire
+  supprimerElement(tab, 3);
+  pour (i variant_de 0 a taille(tab) - 1)
+  faire
+    afficher(tab[i], ", ");
+  ffaire
+fin

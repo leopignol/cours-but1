@@ -1,0 +1,23 @@
+fonction saisirEntierSupX(ch1 : in string, ch2 : in string, x : in entier) renvoie entier_naturel
+debut
+  declarer v : entier;
+  
+  boucle
+    afficher(ch1);
+    saisir(v);
+    si (v > x)
+      sortie;
+    fsi
+    afficher(ch2);
+    ligne_suivante;
+  fboucle
+
+  renvoie v;
+fin
+
+algorithme supX
+debut
+  declarer N : entier_naturel;
+  N <- saisirEntierSupX("Bonjour, donne un nombre > à 10: ", "Erreur! Recommence", 10);
+  afficher("Tu as saisi l'entier ", N);
+fin

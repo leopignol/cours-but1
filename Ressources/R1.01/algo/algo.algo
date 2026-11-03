@@ -1,0 +1,16 @@
+procedure afficherTabInt(tabInt : in tableau_de entier, nbElementParLigne : in entier_naturel, c : in caractere)
+debut
+  declarer compteur : entier_naturel <- 0;
+
+  pour (i variant_de 0 a taille(tabInt) - 2)
+  faire
+    afficher(tabInt[i]);
+    compteur <- compteur + 1;
+    si (mod(compteur, nbElementParLigne) vaut 0)
+      ligne_suivante;
+      compteur <- 0;
+    sinon
+      afficher(c);
+    fsi
+  ffaire
+fin

@@ -1,0 +1,53 @@
+fonction compterDoublonsV1(chaine : in string) renvoie entier_naturel
+debut
+  declarer cpt : entier_naturel <- 0;
+  pour (i variant_de 1 a taille(chaine))
+  faire
+    si (isspace(chaine[i])) continue;
+    si (chaine[i] vaut chaine[i - 1])
+      cpt <- cpt + 1;
+    fsi
+  ffaire
+  renvoie 0;
+fin
+
+fonction compterDoublonsV2(chaine : in string) renvoie entier_naturel
+debut
+  declarer cpt : entier_naturel <- 0;
+  pour (i variant_de 1 a taille(chaine))
+  faire
+    si (chaine[i] vaut chaine[i - 1])
+      cpt <- cpt + 1;
+      i <- i + 1;
+    fsi
+  ffaire
+  renvoie 0;
+fin
+
+fonction compterDoublonsV3(chaine : in string) renvoie entier_naturel
+debut
+  declarer cpt : entier_naturel <- 0;
+  declarer precedent : caractere <- 0;
+  pour (i variant_de 1 a taille(chaine))
+  faire
+    si (isspace(chaine[i])) continue;
+    si (chaine[i] vaut precedent)
+      cpt <- cpt + 1;
+    fsi
+    precedent <- chaine[i];
+  ffaire
+  renvoie 0;
+fin
+
+algorithme compterDoublons
+debut
+  boucle
+    declarer chaine : string;
+    saisir(chaine);
+    si (taille(chaine) vaut 0) sortie;
+
+    declarer doublons : entier_naturel <- compterDoublons(chaine);
+
+    afficher(doublons, " doublons");
+  fboucle
+fin
