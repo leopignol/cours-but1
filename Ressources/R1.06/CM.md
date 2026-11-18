@@ -109,7 +109,7 @@ Une **expression booléenne** correspond a un regroupement d'affirmations. On d�
 
 Certaines expressions booléenne changent de valeur de vérité dépendamment du contexte. Par exemple:
 - "La plus grande ville de ma région est la ville de Marseille"
-- "$x < 7$"
+- "$x \lt 7$"
 
 Nous nous intéressons maintenant à la combinaison d'expressions booléennes atomiques en expressions booléennes pluscomplexes.<br/>
 Nous effectuons de telles combinaisons dans ons conversations de tous les jours, notamment a l'aide des mots "et", "ou",et "si ... alors". Par exemple:
@@ -249,17 +249,17 @@ Ce qui nous permet de conclure que P(x) est vrai.
 C.Q.F.D.
 
 #### Démonstrations utilisant l'arithmétique
-$$(\forall n \in N | (\exists m \in N | m > n))$$
-Soit $n \in N$. Montrons $\exists m \in N$ tel que $m > n$. Prenons $m = n + 1$.<br>
+$$(\forall n \in N | (\exists m \in N | m \gt n))$$
+Soit $n \in N$. Montrons $\exists m \in N$ tel que $m \gt n$. Prenons $m = n + 1$.<br>
 Par les propriétés de l’arithmétique, un tel $m$ existe et $m \in N$.<br>
-Alors bien sûr, on a que $m = n + 1 > n$.
+Alors bien sûr, on a que $m = n + 1 \gt n$.
 
 **C.Q.F.D.**
 
 #### Démonstrations avec $\neg \forall$ ou $\neg \exists$
-$$\neg(\exists m \in \N^* | m > m^2)$$
+$$\neg(\exists m \in \N^* | m \gt m^2)$$
 Par la loi de De Morgan, on peut transformer l’énoncé en
-$\forall m \in \N^* | \neg(m > m^2)$, c’est-à-dire
+$\forall m \in \N^* | \neg(m \gt m^2)$, c’est-à-dire
 $\forall m \in \N^∗ | (m \leq m^2)$. Démontrons donc ceci.<br>
 Soit $m \in \N^*$. Alors on a $m \geq 1$. En multipliant par $m$
 des deux côtes, on obtient $m \cdot m \leq 1 \cdot m$.
@@ -284,3 +284,110 @@ Donc on a $e \in T \cup S$ par définition de l’union.
 ### Suites
 Une **suite** est une séquence d’éléments d’un ensemble.
 Un élément de cette suite est appelé un **terme** de la suite.
+
+---
+
+## Révision
+$$4x^2 = 4x-1$$
+$$4x^2-4x-1 = 0$$
+$$(2x+1)^2 = 0$$
+$$2x+1 = 0$$
+$$2x = 1$$
+$$x = \dfrac{1}{2}$$
+$$
+\text{Or } x \in \R \\
+\text{Donc } \cancel{x}
+$$
+
+## Arithmétique
+* $\N = \{0,1,2,3,\cdots\}$
+* $\Z = \{\cdots,-2,-1,0,1,2,\cdots\}$
+* $\N^* = \{1,2,3,\cdots\} = \N\backslash\{0\}$
+* $\Z^* = \{\cdots,-2,-1,1,2,\cdots\} = \Z\backslash\{0\}$
+* $\mathbb{Q} = \bigg\{\dfrac{p}{q},\ p \in \Z,\ q\in\N^*\bigg\}$
+* $\R \text{ est l'ensemble des nombres réels}$
+
+Pour $a \in \R$ sur note par $|a|$ la **valeur absolue** de $a$. Elle possède les propriétés suivantes:
+* $|a \cdot b| = |a| \cdot |b| \text{ quel que soit le signe de } a \text{ et de } b$
+* $|a + b| \leq |a| + |b|\text{}$
+* $|a| \lt b \text{ est équivalent à } -b \lt a \lt b$<br>
+  Donc:
+$$|a| = a \cdot sign(a)$$
+
+### La division entière et l'algorithme d'Euclide
+Soit $a \in Z^*$ et $b \in \Z$, alors il existe $q \in \Z$ et $q \in \N$ uniques tels que
+$$b = a \cdot q + r,\;\;\;\;0 \leq r \le |a|,$$
+$q$ et $r$ sont appelés respectivement le **quotient** et le **reste** de la **division entière** ou **division euclidienne** de $b$ par $a$.<br>
+On appelle $b$ le **dividende** et $a$ le **diviseur**.
+
+#### Démonstration:
+Considérons l'ensemble des entiers de la forme $b - a \cdot k$, où $k \in \Z$. Cet ensemble contient des nombres non négatifs, par exemple $b + |a| \cdot 1$. Soit $r = b - a \cdot q$ le plus petit parmi ces nombres, donc $r \geq 0$ et
+$$r - |a| = r - a \cdot sign(a) = b-a \cdot (q + sign(a)) \lt 0$$
+donc $b = a \cdot q + r$ et $0 \leq r \lt |a|$.
+
+Soient $q'$ et $r'$ deux autres entiers vérifiant les hypothèses ci-dessus, donc $b = a \cdot q+r = a \cdot q'+r'$. Par soustraction on a $0 = a \cdot (q-q') + (r-r')$, donc
+$$a \cdot (q-q') = (r-r') \text{ et } |a| \cdot |q-q'| = |r-r'| < |a|$$
+
+Diviser $b$ par $a$ signifie donc écrire $b = a \cdot q+r$:
+* Diviser $7$ par $5$:   on a $ 7 = 5 \cdot 1+2$
+* Diviser $7$ par $-5$:  on a $ 7 = (-5) \cdot (-1)+2$
+* Diviser $-7$ par $5$:  on a $-7 = 5 \cdot (-2)+3$
+* Diviser $-7$ par $-5$: on a $-7 = (-5) \cdot (+2)+3$
+
+### Divisibilité
+Soient $a \neq b$ et $b$ deux entiers. On dit que $a$ **divise** $b$ s'il existe $q \in \Z$ tel que $b = a \cdot q$. Dans ce cas $a$ est dit **diviseur** de $b$, et $b$ est **multiple** de $a$. Notation: $a \mid b$
+
+Remarque:
+* Nous avons $\forall a \in \Z, a \neq 0$ alors $a \mid 0$ et $\forall b \in \Z, 1 \mid b$
+* Si $b \neq 0$ l'égalité $|b| = |a| \cdot |q|$ implique que $|a| \leq |b|$, donc les diiviseurs de $b$ sont en nombre infini
+
+Soit $n = c_m \cdots c_1c_0$ un entier positif dont les ci sont les chiffres de $n$ en base $10$. On a
+* $n$ est divisible par $2$ si et seulement si son dernier chiffre est $0$, $2$, $4$, $6$ ou $8$.
+* $n$ est divisible par $3$ si et seulement si la somme de ses chiffres est divisible par $3$.
+* $n$ est divisible par $4$ si et seulement si le nombre formé par ses deux derniers chiffres est divisible par $4$.
+* $n$ est divisible par $5$ si et seulement si son dernier chiffre est 0 ou 5.
+* $n$ est divisible par $7$ si et seulement si $(c_m \cdots c_1) − 2c_0$ est divisible par $7$.
+* $n$ est divisible par $9$ si et seulement si la somme de ses chiffres est divisible par $9$.
+* Soit $A$ la somme des chiffres $c_i$ avec $i$ impair et $B$ la somme des chiffres $c_i$ avec $i$ pair. Alors $n$ est divisible par $11$ si et seulement si $A-B$ est divisible par $11$.
+* $n$ est divisible par $13$ si et seulement si $(c_m \cdots c_1) + 4c_0$ l’est.
+
+#### Divisibilité par $13$
+Soit $n = c_m \cdots c_1c_0$ un entier positif, $n$ est divisible par $13$ si et seulement si $(c_m \cdots c_1) + 4c_0$ l'est.
+
+$$n=2431,\,(c_m \cdots c_1) + 4c_0 = 243 + 4 \cdot 1 = 247$$
+$$n=247,\,(c_m \cdots c_1) + 4c_0 = 24 + 4 \cdot 7 = 52$$
+$$n=52,\,(c_m \cdots c_1) + 4c_0 = 5 + 4 \cdot 2 = 13$$
+
+### PGCD et PPCM
+Soient $a_1, a_2,\cdots$ des entiers qui ne sont pas tous nuls.
+* Un entier $d$ est un **comun diviseur** des $a_i$ si $\forall i, d \mid a_i$.<br>
+  L'ensemble des communs diviseurs de $a_i$ est noté par $\mathbb{D}(a_1, a_2, \cdots)$
+* Le **plus grand** des **communs diviseurs** des $a_i$ est noté $\text{PGCD}(a_1, a_2, \cdots)$
+* Deux entiers $a$ et $b$ sont dits **premiers entre eux** si $\text{PGCD}(a,b) = 1$
+* Si aucun parmi $a_1, a_2, \cdots$ est nul, on note par $M(a_1, a_2, \cdots)$ l’ensemble des **communs multiples** des $a_i$, et par $\text{PPCM}(a_1, a_2, \cdots)$ son **plus petit** élément positif.
+
+* $\mathbb{D}(33) = \{\pm1, \pm3, \pm11, \pm33\}$
+* $\mathbb{D}(15) = \{\pm1, \pm3, \pm5, \pm15\}$
+* $\mathbb{D}(15, 33) = \{\pm1, \pm3\} = \mathbb{D}(15) \cap \mathbb{D}(33)$
+* $\text{PGCD}(15, 33) = \text{PGCD}(33, 15) = 3$
+* $M(15, 33) = \{\pm165, \pm330, \cdots\} \text{ et PPCM}(15, 33) = \text{PPCM}(33, 15) = 165$
+
+### Algorithme d'Euclide
+On veut une méthode algorithmique pour calculer $\text{PGCD}(a, b)$ pour $a, b \in \Z$.
+L’Algorithme d’Euclide accomplit cette tâche en utilisant des divisions euclidiennes successives: le $\text{PGCD}(a, b)$ sera le dernier reste non nul.
+
+Soient $a$ et $b$ deux entiers positifs tels que $a \geq b$.
+Le processus suivant calcule le $\text{PGCD}(a, b)$.
+
+Soit $r_0 = b$ et $r_1 = a$<br>
+
+* Si $r_1 \gt 0$, on calcule le reste $r_2$ de la division de $r_0$ par $r_1$:
+  $$r_0 = r_1 \cdot q_1+r_2$$
+* Si $r_2 \gt 0$, on calcule le reste $r_3$ de la division de $r_0$ par $r_2$:
+  $$r_0 = r_2 \cdot q_2+r_3$$
+* Si $r_2 \gt 0$, on calcule le reste $r_4$ de la division de $r_0$ par $r_3$:
+  $$r_0 = r_3 \cdot q_3+r_4$$
+  $$\dots$$
+* Si $r_t \gt 0$, on calcule le reste $r_{t+1}$ de la division de $r_{t-1}$ par $r_t$:
+  $$r_{t-1} = r_t \cdot q_t+r_{t+1}$$
+* Si $r_{t+1} = 0$, on a terminé et $\text{PGCD}(a, b) = r_t$

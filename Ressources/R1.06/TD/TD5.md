@@ -22,7 +22,8 @@ $$\forall y \in \R,\, \exists x \in \R \mid G(x)=y\ ? \\
 g(x)=g(5-y)=(5-y)+5=y \\
 g \text{ est subjective}$$
 
-2. $f$ est injective donc on a $f^{-1}$
+2.
+$f$ est injective donc on a $f^{-1}$
 $$f(x)=x+3$$
 $$f o f^{-1}(y)=y\\
 f^{-1} o f(x)=x$$
@@ -32,3 +33,25 @@ t=x+3\ \ \ \ \ \ x=t-3$$
 $$f^{-1}: \Z \rightarrow \Z \\
 t \longmapsto t-3$$
 $$\large f^{-1}(t)=t-3$$
+
+$g$ est injective donc on a $g^{-1}$
+$$g(x)=-x+5$$
+$$g o g^{-1}(y)=y\\
+g^{-1} o g(x)=x$$
+$$g^{-1}(g(x))=x \\
+g^{-1}(-x+5)=x \\
+t=-x+5\ \ \ \ \ \ x=-t+5$$
+$$g^{-1}: \R \rightarrow \R \\
+t \longmapsto -t-5$$
+$$\large g^{-1}(t)=-t+5$$
+
+## Exercice 6
+
+$$f(n_1) = f(n_2) \Rightarrow n_1=n_2 \\
+n_1+1 = n_2+1 \Rightarrow n_1 = n_2 \\
+f \text{ est injective}$$
+
+$$h(x_1,\,y_1) = h(x_2,\,y_2) \Rightarrow (x_1+y_1,x_1-y_1)=(x_2+y_2,x_2-y_2)$$
+
+## Exercice 8
+

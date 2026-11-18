@@ -54,3 +54,18 @@ What is your favorite programming language?|C++|Python|C++|Mostly C++
 Do you prefer Windows or Linux|Linux|Windows|Linux|Mostly Linux
 What Linux distribution do you use?|Ubuntu|None|Ubuntu|Mostly Ubuntu
 What is the software you use the most?|FaceTime|LoL|FireFox|Varied
+
+---
+
+## Measurements, dimensions, distances
+
+* Total height: 190cm = 1.9m
+* Total length: 95cm
+* Total width: 95cm
+* Total weight: 50kg
+* Total volume: 1714750cm³ = 1.71m³
+
+Adjective|Deep |High  |Long  |Wide |-
+:-------:|:---:|:----:|:----:|:---:|:----:
+Noun     |Depth|Height|Length|Width|Weight
+Verb     |  -  |-     |-     |-    |Weigh
